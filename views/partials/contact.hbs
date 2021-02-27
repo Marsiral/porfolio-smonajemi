@@ -1,0 +1,92 @@
+  <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+                  
+        {{#if errorMsg}}
+          <div class="alert alert-danger alert-dismissible fade show" role="alert" id="status">
+            <strong style="padding-right: 10px;" id="chngStatus" >Oops!</strong> <span id="rmMessage">{{this.errorMsg}}  <br>  <div id="error_message"></span> </div>  
+          </div>
+          {{>contactNav}}
+        {{/if}}  
+ 
+           <div class="addNew" role="alert" id="add">
+            <strong style="padding-right: 10px;" id="addNewtx"></strong>
+          </div>      
+        
+        <div class="row" data-aos="fade-in">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="icofont-google-map"></i>
+                <h4>Location:</h4>
+                <p>Toronto, Ontario, CAN</p>
+              </div>
+
+              <div class="email">
+                <i class="icofont-envelope"></i>
+                <h4>Email:</h4>                
+                <a href="mailto:contactsinamon@gmail.com"><p>contactsinamon@gmail.com</p></a>
+              </div>
+
+              <div class="phone">
+                <i class="icofont-phone"></i>
+                <h4>Call:</h4>
+                <a href="tel:+16474665659"><p>+1 647 466 5659</p></a>
+              </div>
+
+              <iframe src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=65%20Raptors%20Way+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+            </div>
+
+          </div>
+
+      
+        <hr> <br>
+              
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">           
+            <form method="POST" action="/" onsubmit="return validation();" >
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="first_name">First Name</label>
+                  <input type="text" class="form-control" id="first_name" name="first_name"  data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                     
+                </div>
+                  <div class="form-group col-md-6">
+                  <label for="last_name">Last Name</label>
+                  <input type="text" class="form-control" id="last_name" name="last_name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="email">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="number">Your Number</label>
+                  <input type="number" class="form-control" id="phone" name="phone"  data-rule="number" data-msg="Please enter a valid phone number" />
+                </div>
+              </div>
+              {{!-- <div class="form-group">
+                <label for="name">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              </div> --}}
+              <div class="form-group">
+                <label for="name">Message</label>
+                <textarea class="form-control" name="message" id="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+              </div>                 
+                     
+               <button type="reset" class="btn" >Clear</button>
+               <button type="submit" id="submit" class="btn">Send</button>
+               <hr>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+        </div>
+    </section><!-- End Contact Section -->
