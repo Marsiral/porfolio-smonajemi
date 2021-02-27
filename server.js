@@ -58,12 +58,10 @@ app.post('/', (req, res,next) => {
     } else {
 
     }
-    setTimeout(() => {
-        return res.render('index');
-    }, 2 * 1000);
-  
+    
 
-Contact Button    
+//Contact Button    
+setTimeout(() => {
 var admin = `contactsinamon@gmail.com`;
 var date = new Date();
 const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
@@ -123,6 +121,8 @@ const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
         i++;
         });    
     });  
+         
+}, 2 * 1000);
 });
 
 // Final Page
