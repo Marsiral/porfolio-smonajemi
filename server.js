@@ -55,13 +55,11 @@ app.post('/', (req, res,next) => {
     if(data === ""){
         return res.render("partials/contact.hbs", { errorMsg: "Please fill out the required fields to submit :)", title: 'Contact Me'})
         
-    } else {
-
-    }
-    
+    }  
 
 //Contact Button    
 setTimeout(() => {
+
 var admin = `contactsinamon@gmail.com`;
 var date = new Date();
 const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
