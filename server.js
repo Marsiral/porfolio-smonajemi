@@ -5,8 +5,6 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 const clientSessions = require("client-sessions");
-
-
 const fs = require("fs");
 const http = require("http");
 const https = require("https");
