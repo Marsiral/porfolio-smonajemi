@@ -63,66 +63,66 @@ app.post('/', (req, res,next) => {
     }, 2 * 1000);
   
 
-// Contact Button    
-// var admin = `contactsinamon@gmail.com`;
-// var date = new Date();
-// const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
-//     const transporter = nodemailer.createTransport({
-//         service: 'gmail',
-//         auth: {
-//             user: 'contactsinamon@gmail.com',
-//             pass: 'qrqiuzxtzkrllmeb'
-//         },
-//         tls:{
-//             rejectUnauthorized: false
-//         }
-// });
+Contact Button    
+var admin = `contactsinamon@gmail.com`;
+var date = new Date();
+const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'contactsinamon@gmail.com',
+            pass: 'qrqiuzxtzkrllmeb'
+        },
+        tls:{
+            rejectUnauthorized: false
+        }
+});
     
-//     const emailAdmin = {
-//         from: req.body.email,
-//         to: admin,
-//         subject: `${fullname}`,
-//         html: `<h3>NEW MESSAGE FROM <a style="color:red;">${fullname}</a>: </h3><br>
+    const emailAdmin = {
+        from: req.body.email,
+        to: admin,
+        subject: `${fullname}`,
+        html: `<h3>NEW MESSAGE FROM <a style="color:red;">${fullname}</a>: </h3><br>
                             
-//                 <b><p><a style="color:red;"> "</a> ${req.body.message} <a style="color:red;"> "</a> </b>  <br><hr><br><i>${fullname} <br> ${req.body.phone}<br>
-//                 ${req.body.email}</i></p> <br><br> ${date}`
-//     }    
+                <b><p><a style="color:red;"> "</a> ${req.body.message} <a style="color:red;"> "</a> </b>  <br><hr><br><i>${fullname} <br> ${req.body.phone}<br>
+                ${req.body.email}</i></p> <br><br> ${date}`
+    }    
 
-//     const emailSender = {
-//         from: req.body.email,
-//         to: req.body.email,
-//         subject: `Thank You`,
-//         html: `<h4>Hi ${req.body.first_name},<br><br> Your message has been sent successfully. I will get back to you as soon as possible.<br><br>Talk soon,<br>Sina Monajemi</h4><br><br>
-//         <h2>Your Message:</h2> <br> ${req.body.message} <br><br><hr><br> ${date}`
-//     } 
+    const emailSender = {
+        from: req.body.email,
+        to: req.body.email,
+        subject: `Thank You`,
+        html: `<h4>Hi ${req.body.first_name},<br><br> Your message has been sent successfully. I will get back to you as soon as possible.<br><br>Talk soon,<br>Sina Monajemi</h4><br><br>
+        <h2>Your Message:</h2> <br> ${req.body.message} <br><br><hr><br> ${date}`
+    } 
 
-//     const mailOption = [emailAdmin, emailSender];
-//     var i = 1;
-//     console.log(fullname);
-//     mailOption.forEach(e => {             
-//         transporter.sendMail(e, (err) => {
-//             var flag = Boolean(false);
-//             while(!flag){   
-//                 if(err){
-//                     console.log(`EMAIL COULD NOT BE SENT - ${err}`);
-//                     flag = false;
-//                     break;
-//                 }else{
-//                     console.log( `Email ${i} sent successully.`);    
-//                     flag = true;
-//                 }
-//             }
-//             if(i == 2){
-//                 if(flag == false){                    
-//                     res.send(`<h3>Oops... Error Sending Email!</h3><hr><br> <h5>${err}</h5>`);
-//                 }else{
-//                     res.redirect('/finalPage');   
-//                     exit = true;
-//             }
-//                     }
-//         i++;
-//         });    
-//     });  
+    const mailOption = [emailAdmin, emailSender];
+    var i = 1;
+    console.log(fullname);
+    mailOption.forEach(e => {             
+        transporter.sendMail(e, (err) => {
+            var flag = Boolean(false);
+            while(!flag){   
+                if(err){
+                    console.log(`EMAIL COULD NOT BE SENT - ${err}`);
+                    flag = false;
+                    break;
+                }else{
+                    console.log( `Email ${i} sent successully.`);    
+                    flag = true;
+                }
+            }
+            if(i == 2){
+                if(flag == false){                    
+                    res.send(`<h3>Oops... Error Sending Email!</h3><hr><br> <h5>${err}</h5>`);
+                }else{
+                    res.redirect('/finalPage');   
+                    exit = true;
+            }
+                    }
+        i++;
+        });    
+    });  
 });
 
 // Final Page
