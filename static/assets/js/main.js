@@ -18,7 +18,10 @@ history.pushState(null, null, location.href);
     $(window).click(function (){
         $('.collapse').collapse('hide');
       });
-
+      
+      $(form).on('show.bs.modal', function (e) {
+        if (!data) return e.preventDefault() // stops modal from being shown
+      })
 
 !(function($) {
   "use strict";
