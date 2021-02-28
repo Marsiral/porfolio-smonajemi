@@ -1,3 +1,11 @@
+
+$(document).ready(function() {
+    function disablePrev() { document.getElementById("myForm").reset();}
+    window.onload = disablePrev();
+    window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
+  });
+
+  
 function validation() {
     const fname = document.getElementById("first_name").value;
     const lname = document.getElementById("last_name").value;
