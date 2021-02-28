@@ -118,7 +118,7 @@ const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
                 if(flag == false){                    
                     res.send(`<h3>Oops... Error Sending Email!</h3><hr><br> <h5>${err}</h5>`);
                 }else{
-                    res.redirect('/finalPage');   
+                    res.redirect('/thankyou');   
                     exit = true;
             }
                     }
@@ -129,9 +129,9 @@ const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
 });
 
 // Final Page
-app.get("/finalPage",  (req,res) => {
+app.get("/thankyou",  (req,res) => {
     if(exit == true){
-        res.render('finalPage',{title: 'THANK YOU!'});
+        res.render('thankyou',{title: 'THANK YOU!'});
     } else {
         res.redirect('/');
     }
