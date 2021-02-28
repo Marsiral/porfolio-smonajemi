@@ -11,6 +11,11 @@
 //   });
 // })
 
+$(function() {
+	$(document).click(function (event) {
+	  $('#demo').collapse('hide');
+	});
+  });
 
 !(function($) {
   "use strict";
