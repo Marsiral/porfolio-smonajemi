@@ -7,13 +7,12 @@
     padding: 0;
     margin: 0;
   }
-  
-  #notfound {
+#finalp {
     position: relative;
     height: 100vh;
   }
   
-  #notfound .notfound {
+  #finalp .finalp {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -22,18 +21,18 @@
             transform: translate(-50%, -50%);
   }
   
-  .notfound {
+  .finalp {
     max-width: 520px;
     width: 100%;
     text-align: center;
     line-height: 1.4;
   }
   
-  .notfound .notfound-404 {
+  .finalp .finalp-404 {
     height: 190px;
   }
   
-  .notfound .notfound-404 h1 {
+  .finalp .finalp-404 h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 146px;
     font-weight: 700;
@@ -41,7 +40,7 @@
     color: #232323;
   }
   
-  .notfound .notfound-404 h1>span {
+  .finalp .finalp-404 h1>span {
     display: inline-block;
     width: 120px;
     height: 120px;
@@ -53,7 +52,7 @@
     z-index: -1;
   }
   
-  .notfound h2 {
+  .finalp h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 22px;
     font-weight: 700;
@@ -62,13 +61,13 @@
     color: #232323;
   }
   
-  .notfound p {
+  .finalp p {
     font-family: 'Montserrat', sans-serif;
     color: #787878;
     font-weight: 300;
   }
   
-  .notfound a {
+  .finalp a {
     font-family: 'Montserrat', sans-serif;
     display: inline-block;
     padding: 12px 30px;
@@ -81,18 +80,18 @@
     transition: 0.2s all;
   }
   
-  .notfound a:hover {
+  .finalp a:hover {
     opacity: 0.8;
   }
   
   @media only screen and (max-width: 767px) {
-    .notfound .notfound-404 {
+    .finalp .finalp-404 {
       height: 115px;
     }
-    .notfound .notfound-404 h1 {
+    .finalp .finalp-404 h1 {
       font-size: 86px;
     }
-    .notfound .notfound-404 h1>span {
+    .finalp .finalp-404 h1>span {
       width: 86px;
       height: 86px;
     }
