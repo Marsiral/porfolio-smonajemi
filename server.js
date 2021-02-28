@@ -43,7 +43,7 @@ app.get('/',(req,res) => {
 });
 
 
-app.post('/', (req, res,next) => {
+app.post('/', (req, res) => {
      
     const fname = req.body.first_name;
     const lname = req.body.last_name;
@@ -53,7 +53,7 @@ app.post('/', (req, res,next) => {
     const data = fname && lname && email && phone && message;
 
     if(data === ""){
-        return res.render("partials/contact.hbs", { errorMsg: "Please fill out the required fields to submit :)", title: 'Contact Me'})
+        return res.render("partials/contact.hbs", { errorMsg: "Please fill out the required fields to submit :)", title: 'Contact Me'});
     }  
 
 //Contact Button    
