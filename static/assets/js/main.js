@@ -5,8 +5,7 @@
 * License: https://bootstrapmade.com/license/
 */
 
-function preventBack() { window.history.forward(); }
-setTimeout("preventBack()", 0);
+window.history.forward();
 window.onunload = function () { null };  
 
 $(window).click(function (event) {
