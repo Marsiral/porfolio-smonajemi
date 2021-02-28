@@ -8,14 +8,11 @@
 history.pushState(null, null, location.href);
     window.onpopstate = function () {
         history.go(1);
-    };
-    
+    };    
 
 	$(document).click(function (event) {
 	  $('.collapse').collapse('hide');
 	});
-
-
 
 !(function($) {
   "use strict";
