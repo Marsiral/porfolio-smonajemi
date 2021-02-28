@@ -87,13 +87,13 @@ const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
         to: req.body.email,
         subject: `Thank You`,
         html: `<div style="text-align: center;text-transform:uppercase">
-        <h4 style="color:#f4d160;">Your message has been received</h4>
+        <h4 style="color:#a08631;">Your message has been received</h4>
         </div> 
         <h5>Hi ${req.body.first_name},</h5>
 	    <h5>Thank you for reaching out! <br> I will get back to you soon.</h5>
         <h5>Best, <br> SINA MONAJEMI <br> <a href="https://smonajemi.com">smonajemi.com</a></h5>
         <hr>
-        <div style="text-align: left;text-transform:uppercase"><h5>Your message: <br>${req.body.message}</h5><br>
+        <div style="text-align:left;"><h5 style="text-transform:uppercase">Your message: <br> <div style="color:#709fb0; margin-left: 25px;">${req.body.message}</div></h5><br>
         <h5>Sent from: <br> ${fullname} <br> ${req.body.email}</h5>
         </div>
         `
