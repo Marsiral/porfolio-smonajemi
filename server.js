@@ -42,7 +42,6 @@ app.get('/',(req,res) => {
     res.render('index',{title: 'Sina Monajemi'});
 });
 
-
 app.post('/', (req, res) => {
      
     const fname = req.body.first_name;
@@ -54,6 +53,7 @@ app.post('/', (req, res) => {
 
     if(data === ""){
         return res.render("partials/contact.hbs", { errorMsg: "Please fill out the required fields to submit :)", title: 'Contact Me'});
+        
     }  
 
 //Contact Button    

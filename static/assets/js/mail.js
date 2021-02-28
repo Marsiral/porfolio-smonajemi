@@ -50,6 +50,14 @@ function validation() {
                     rm.innerHTML = "";
                     txt.innerHTML = "Email Sent";     
                 }
+                
+                document.getElementById('first_name').value=''; 
+                document.getElementById('last_name').value=''; 
+                document.getElementById('email').value=''; 
+                document.getElementById('phone').value=''; 
+                document.getElementById('message').value=''; 
                 return true;
 }
   }
+
+

@@ -5,12 +5,6 @@
 * License: https://bootstrapmade.com/license/
 */
 
-history.pushState(null, null, location.href);
-    window.onpopstate = function () {
-        history.go(1);
-    };
-    
-
 
     window.history.forward();
     window.onunload = function () { null };  
@@ -18,11 +12,6 @@ history.pushState(null, null, location.href);
     $(window).click(function (){
         $('.collapse').collapse('hide');
       });
-      
-      $(form).on('show.bs.modal', function (e) {
-        if (!data) return e.preventDefault() // stops modal from being shown
-      })
-
 !(function($) {
   "use strict";
 
