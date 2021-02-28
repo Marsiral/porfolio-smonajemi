@@ -8,29 +8,29 @@ function validation() {
     let exit = Boolean(true);
     var text;
 
-    if(fname.length < 2){
-        text = "Please add first name";
-        error_message.innerHTML = text;
+    if(fname.length == ''){
+        text = "Please Enter Your First Name";
+        error_message.innerHTML = text.toUpperCase();
         return !exit;
     }
-    if(lname.length < 2){
-        text = "Please add last name";
-        error_message.innerHTML = text;
+    if(lname.length == ''){
+        text = "Please Enter Your Last Name";
+        error_message.innerHTML = text.toUpperCase();
         return !exit;
     }
-    if(email.length < 2){
-        text = "Please add email address";
-        error_message.innerHTML = text;
+    if(email.length == ''){
+        text = "Please Enter Your Email Address";
+        error_message.innerHTML = text.toUpperCase();
         return !exit;
     }
-    if(phone.length < 5){
-        text = "Please add phone number";
-        error_message.innerHTML = text;
+    if(phone.length < 10){
+        text = "Please Enter Your Phone Number";
+        error_message.innerHTML = text.toUpperCase();
         return !exit;
     }
-    if(message.length < 5){
-        text = "Please add message";
-        error_message.innerHTML = text;
+    if(message.length < 20){
+        text = "Your Message Cannot Be Less Than 20 Characters";
+        error_message.innerHTML = text.toUpperCase();
         return !exit;
     }
     else{   
@@ -38,7 +38,7 @@ function validation() {
                     
                     document.getElementById("add").className = "alert alert-success alert-dismissible fade show";
                     document.getElementById("addNewtx").innerHTML = "Email Sent";
-                    document.getElementById("myForm").reset();  
+                    
                     document.getElementById("status").className = "false";
                     document.getElementById("chngStatus").innerHTML = "";
                     document.getElementById("rmMessage").innerHTML = "";              
@@ -48,8 +48,7 @@ function validation() {
                     var txt = document.getElementById("chngStatus");
                     var rm = document.getElementById("rmMessage");
                     rm.innerHTML = "";
-                    txt.innerHTML = "Email Sent";    
-                    
+                    txt.innerHTML = "Email Sent";           
                    
                 }
              
@@ -58,9 +57,4 @@ function validation() {
 }
   }
   
-function myfunc(){
-    setTimeout(() => {
-        validation();
-        document.getElementById("myForm").reset();
-    }, 0);
-}
+

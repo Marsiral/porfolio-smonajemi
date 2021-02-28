@@ -7,8 +7,9 @@
         </div>                  
         {{#if errorMsg}}
           <div class="alert alert-danger alert-dismissible fade show" role="alert" id="status">
-            <strong style="padding-right: 10px;" id="chngStatus" >Oops!</strong> <span id="rmMessage">{{this.errorMsg}}  <br>  <div id="error_message"></span> </div>  
-          </div>                
+            <strong style="padding-right: 10px;" id="chngStatus" >Oops!</strong><span id="rmMessage">{{this.errorMsg}}<br><b><u><div id="error_message"></div></u></b></span>
+              
+          </div>                   
           {{>contactNav}}
         {{/if}} 
            <div class="addNew" role="alert" id="add">
@@ -53,7 +54,7 @@
           </div>      
         <hr> <br>
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">           
-            <form method="POST" action="/" onsubmit="myfunc(); " id="myForm">
+            <form method="POST" action="/" onsubmit="return validation()" id="myForm">
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="first_name">First Name</label>

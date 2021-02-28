@@ -52,7 +52,7 @@ app.post('/', (req, res) => {
     const data = fname && lname && email && phone && message;
   
     if(data === ""){
-        return res.render("partials/contact.hbs", { errorMsg: "Please fill out the required fields to submit :)", title: 'Contact Me'});
+        return res.render("partials/contact.hbs", { errorMsg: "Please fill out the required fields to submit", title: 'Contact Me'});
         
     }  
 
