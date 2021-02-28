@@ -94,7 +94,7 @@ const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
         <h5>Best, <br> SINA MONAJEMI <br> <a href="https://smonajemi.com">smonajemi.com</a></h5>
         <hr>
         <div style="text-align: left;text-transform:uppercase"><h5>Your message: <br>${req.body.message}</h5><br>
-        <h7>Sent from: <br> ${fullname} <br> ${req.body.email}</h7>
+        <h5>Sent from: <br> ${fullname} <br> ${req.body.email}</h5>
         </div>
         `
     } 
