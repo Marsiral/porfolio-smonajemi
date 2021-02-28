@@ -42,8 +42,7 @@ app.get('/',(req,res) => {
     res.render('index',{title: 'Sina Monajemi'});
 });
 
-app.post('/', (req, res) => {
-     
+app.post('/', (req, res) => {    
 
     const fname = req.body.first_name;
     const lname = req.body.last_name;
