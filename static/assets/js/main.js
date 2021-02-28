@@ -7,7 +7,9 @@
 
 
 window.history.forward();
-function noBack() { window.history.forward(); }
+function noBack() { 
+  setTimeout(0)
+  window.history.forward(); }
     
     $(window).click(function (){
         $('.collapse').collapse('hide');
