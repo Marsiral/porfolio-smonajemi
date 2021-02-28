@@ -5,12 +5,20 @@
 * License: https://bootstrapmade.com/license/
 */
 
-window.history.forward();
-window.onunload = function () { null };  
+history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+        history.go(1);
+    };
+    
 
-$(window).click(function (event) {
-	  $('.collapse').collapse('hide');
-	});
+
+    window.history.forward();
+    window.onunload = function () { null };  
+    
+    $(window).click(function (){
+        $('.collapse').collapse('hide');
+      });
+
 
 !(function($) {
   "use strict";
