@@ -34,30 +34,33 @@ function validation() {
         return !exit;
     }
     else{   
-
-            if(exit){
+            if(exit){               
+                    
                     document.getElementById("add").className = "alert alert-success alert-dismissible fade show";
                     document.getElementById("addNewtx").innerHTML = "Email Sent";
+                    document.getElementById("myForm").reset();  
                     document.getElementById("status").className = "false";
                     document.getElementById("chngStatus").innerHTML = "";
-                    document.getElementById("rmMessage").innerHTML = "";
-               
-                } else{
-
+                    document.getElementById("rmMessage").innerHTML = "";              
+                } else{               
+                   
                     document.getElementById("status").className = "alert alert-success alert-dismissible fade show";
                     var txt = document.getElementById("chngStatus");
                     var rm = document.getElementById("rmMessage");
                     rm.innerHTML = "";
-                    txt.innerHTML = "Email Sent";     
+                    txt.innerHTML = "Email Sent";    
+                    
+                   
                 }
-                
-                document.getElementById('first_name').value=''; 
-                document.getElementById('last_name').value=''; 
-                document.getElementById('email').value=''; 
-                document.getElementById('phone').value=''; 
-                document.getElementById('message').value=''; 
+             
                 return true;
+                
 }
   }
-
-
+  
+function myfunc(){
+    setTimeout(() => {
+        validation();
+        document.getElementById("myForm").reset();
+    }, 0);
+}

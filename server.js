@@ -44,13 +44,14 @@ app.get('/',(req,res) => {
 
 app.post('/', (req, res) => {
      
+
     const fname = req.body.first_name;
     const lname = req.body.last_name;
     const email = req.body.email;
     const phone = req.body.phone;
     const message = req.body.message;
     const data = fname && lname && email && phone && message;
-
+  
     if(data === ""){
         return res.render("partials/contact.hbs", { errorMsg: "Please fill out the required fields to submit :)", title: 'Contact Me'});
         
@@ -93,7 +94,6 @@ const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
 
     const mailOption = [emailAdmin, emailSender];
     var i = 1;
-    console.log(fullname);
     mailOption.forEach(e => {             
         transporter.sendMail(e, (err) => {
             var flag = Boolean(false);
@@ -118,7 +118,6 @@ const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
         i++;
         });    
     });  
-         
 }, 2 * 1000);
 });
 
@@ -127,7 +126,7 @@ app.get("/finalPage",  (req,res) => {
     if(exit == true){
         res.render('finalPage',{title: 'THANK YOU!'});
     } else {
-        res.redirect('/')
+        res.redirect('/');
     }
     exit = false;
 })
