@@ -10,11 +10,10 @@ history.pushState(null, null, location.href);
         history.go(1);
     };
     
-$(function() {
+
 	$(document).click(function (event) {
 	  $('.collapse').collapse('hide');
 	});
-  });
 
 
 
