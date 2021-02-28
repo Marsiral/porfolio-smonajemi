@@ -77,7 +77,7 @@ const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
         from: req.body.email,
         to: admin,
         subject: `${fullname}`,
-        html: `<h3>NEW MESSAGE FROM <a style="color:red;">${fullname}</a>: </h3><br>
+        html: `<div style="text-align: center;text-transform:uppercase"><h3>NEW MESSAGE FROM <a style="color:red;">${fullname}</a></h3></div> <br>
                 <b><p><a style="color:red;"> "</a> ${req.body.message} <a style="color:red;"> "</a></b><br><hr><br><i>${fullname} <br> ${req.body.phone}<br>
                 ${req.body.email}</i></p> <br><br> ${date}`
     }    
