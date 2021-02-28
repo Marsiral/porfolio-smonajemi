@@ -6,11 +6,8 @@
 */
 
 
-$(document).ready(function() {
-  function disablePrev() { window.history.forward() }
-  window.onload = disablePrev();
-  window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
-});
+window.history.forward();
+function noBack() { window.history.forward(); }
     
     $(window).click(function (){
         $('.collapse').collapse('hide');

@@ -37,7 +37,8 @@
   ======================================================== -->
 </head>
 
-<body>
+<body onload="noBack();"
+    onpageshow="if (event.persisted) noBack();" onunload="">
     {{{body}}}
 
       <!-- Rest of the files -->
