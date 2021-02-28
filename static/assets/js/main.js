@@ -5,12 +5,10 @@
 * License: https://bootstrapmade.com/license/
 */
 
-// $(document).ready( function() { // Wait until document is fully parsed
-//   $("#submit").on('click', function(e){
-//      e.preventDefault();
-//   });
-// })
-
+history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+        history.go(1);
+    };
 $(function() {
 	$(document).click(function (event) {
 	  $('#demo').collapse('hide');
