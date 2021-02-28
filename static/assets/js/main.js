@@ -9,11 +9,14 @@ history.pushState(null, null, location.href);
     window.onpopstate = function () {
         history.go(1);
     };
+    
 $(function() {
 	$(document).click(function (event) {
-	  $('#demo').collapse('hide');
+	  $('.collapse').collapse('hide');
 	});
   });
+
+
 
 !(function($) {
   "use strict";
