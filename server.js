@@ -79,8 +79,7 @@ const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
         to: admin,
         subject: `${fullname}`,
         html: `<h3>NEW MESSAGE FROM <a style="color:red;">${fullname}</a>: </h3><br>
-                            
-                <b><p><a style="color:red;"> "</a> ${req.body.message} <a style="color:red;"> "</a> </b>  <br><hr><br><i>${fullname} <br> ${req.body.phone}<br>
+                <b><p><a style="color:red;"> "</a> ${req.body.message} <a style="color:red;"> "</a></b><br><hr><br><i>${fullname} <br> ${req.body.phone}<br>
                 ${req.body.email}</i></p> <br><br> ${date}`
     }    
 
@@ -88,8 +87,15 @@ const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
         from: req.body.email,
         to: req.body.email,
         subject: `Thank You`,
-        html: `<h4>Hi ${req.body.first_name},<br><br> Your message has been sent successfully. I will get back to you as soon as possible.<br><br>Talk soon,<br>Sina Monajemi</h4><br><br>
-        <h2>Your Message:</h2> <br> ${req.body.message} <br><br><hr><br> ${date}`
+        html: `<div style="text-align: center;text-transform:uppercase">
+        <h4 style="color:red;">Your message has been received</h4>
+        </div> 
+        <h5>Hi ${req.body.first_name},</h5>
+	    <h5>Thank you for reaching out! <br> I will get back to you soon.</h5>
+        <h5>Best, <br> SINA MONAJEMI <br> <a href="smonajemi.com">smonajemi.com</a></h5>
+        <hr>
+        <div style="text-align: left;text-transform:uppercase"><h5>Your message: <br>${req.body.message}</h5></div>
+        `
     } 
 
     const mailOption = [emailAdmin, emailSender];
