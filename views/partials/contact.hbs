@@ -5,26 +5,21 @@
         <div class="section-title">
           <h2>Contact</h2>
           <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-                  
+        </div>                  
         {{#if errorMsg}}
           <div class="alert alert-danger alert-dismissible fade show" role="alert" id="status">
             <strong style="padding-right: 10px;" id="chngStatus" >Oops!</strong> <span id="rmMessage">{{this.errorMsg}}  <br>  <div id="error_message"></span> </div>  
           </div>
-                <div class="row" data-aos="fade-in">
-         
-
-          <div class="col-lg-5 d-flex align-items-stretch">
-            
-            <div class="info" >
-                <div class="homepage">
-                <i class="icofont-home"></i>
-                 <a href="/"><h4  style="padding-top:10px;">Homepage</h4></a>
+          <div class="row" data-aos="fade-in">        
+              <div class="col-lg-5 d-flex align-items-stretch">            
+                <div class="info" >
+                    <div class="homepage">
+                    <i class="icofont-home"></i>
+                    <a href="/"><h4  style="padding-top:10px;">Homepage</h4></a>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-                
+            </div>                
           {{>contactNav}}
         {{/if}}  
  
