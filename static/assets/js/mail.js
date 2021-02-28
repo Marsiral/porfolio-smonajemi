@@ -3,7 +3,7 @@
 
   
 function validation() {
-    document.getElementById("myForm").reset();
+   
     const fname = document.getElementById("first_name").value;
     const lname = document.getElementById("last_name").value;
     const email = document.getElementById("email").value;
@@ -55,10 +55,9 @@ function validation() {
                     txt.innerHTML = "Email Sent";           
                    
                 }
-             
-                return true;
-                
+                document.getElementById("myForm").reset();                
 }
+return true;
   }
   
 
