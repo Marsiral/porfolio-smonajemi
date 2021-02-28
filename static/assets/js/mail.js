@@ -55,9 +55,15 @@ function validation() {
                     txt.innerHTML = "Email Sent";           
                    
                 }
-                document.getElementById("myForm").reset();                
+            }      
+    return true;          
 }
-return true;
-  }
+$(document).ready(function() {
+    if(validation() == true){
+        document.getElementById("myForm").reset();
+        alert(false);
+      }
+  });
+
   
 
