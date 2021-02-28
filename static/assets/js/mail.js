@@ -9,10 +9,16 @@ function validation() {
     const email = document.getElementById("email").value;
     const phone = document.getElementById("phone").value;
     const message = document.getElementById("message").value;
+    const data = fname || lname || email || phone || message;
+
     const error_message = document.getElementById("error_message");
     let exit = Boolean(true);
     var text;
-
+    if(data.length == ''){
+        text = "";
+        error_message.innerHTML = text;
+        return !exit;
+    }else{
     if(fname.length == ''){
         text = "Please Enter Your First Name";
         error_message.innerHTML = text.toUpperCase();
@@ -33,8 +39,8 @@ function validation() {
         error_message.innerHTML = text.toUpperCase();
         return !exit;
     }
-    if(message.length < 20){
-        text = "Your Message Cannot Be Less Than 20 Characters";
+    if(message.length < 5){
+        text = "Please Write a Message";
         error_message.innerHTML = text.toUpperCase();
         return !exit;
     }
@@ -55,7 +61,8 @@ function validation() {
                     txt.innerHTML = "Email Sent";           
                    
                 }
-            }      
+            }
+        }      
     return true;          
 }
 $(document).ready(function() {

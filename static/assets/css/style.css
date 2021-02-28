@@ -255,7 +255,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #error_message{
   padding-top: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 #hero .hero-container {
