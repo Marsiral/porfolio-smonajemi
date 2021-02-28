@@ -61,7 +61,6 @@ function validation() {
 $(document).ready(function() {
     if(validation() == true){
         document.getElementById("myForm").reset();
-        alert(false);
       }
   });
 
