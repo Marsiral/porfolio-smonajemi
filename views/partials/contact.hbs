@@ -5,7 +5,7 @@
           <h2>Contact</h2>
           <p>You can't touch me, but you can get in touch with me!</p>
         </div>                  
-        {{>errorHandling}}
+       
         <div class="row" data-aos="fade-in">
           <div class="col-lg-5 d-flex align-items-stretch">            
             <div class="info">
@@ -64,9 +64,8 @@
                <button type="reset" class="btn" >Clear</button>
                <button type="submit" id="submit" class="btn">Send</button>
                <hr>
-              <div class="addNew" role="alert" id="add">
-                <strong style="padding-right: 10px;" id="addNewtx"></strong>
-              </div>  
+                {{>errorHandling}}
+              
             </form>
           </div>
         </div>
