@@ -51,9 +51,8 @@ app.post('/', (req, res) => {
     const message = req.body.message;
     const data = fname && lname && email && phone && message;
   
-    if(data === ""){
-        return res.render("partials/contact.hbs", { errorMsg: "Please fill out the required fields to submit", title: 'Contact Me'});
-        
+    if(data === "") {
+        return res.render("partials/contact.hbs", { errorMsg: "Please fill out the required fields to submit", title: 'Contact Me'});        
     }  
 
 //Contact Button    
