@@ -41,29 +41,27 @@ function validation() {
         return !exit;
     }
     if(message.length < 5){
-        text = "Please Write Me a Short Message!";
+        text = "Message field cannot be empty";
         error_message.innerHTML = text.toUpperCase();
         return !exit;
     }
-    else{   
-            if(exit){               
-                    
-                    document.getElementById("add").className = "alert alert-success alert-dismissible fade show";
-                    document.getElementById("addNewtx").innerHTML = "Email Sent";                    
-                    document.getElementById("status").className = "false";
-                    document.getElementById("chngStatus").innerHTML = "";
-                    document.getElementById("rmMessage").innerHTML = "";              
-                } else{               
-                   
-                    document.getElementById("status").className = "alert alert-success alert-dismissible fade show";
-                    var txt = document.getElementById("chngStatus");
-                    var rm = document.getElementById("rmMessage");
-                    rm.innerHTML = "";
-                    txt.innerHTML = "Email Sent";           
-                   
-                }
-                
-            }
+ 
+    if(exit){           
+            document.getElementById("add").className = "alert alert-success alert-dismissible fade show";
+            document.getElementById("addNewtx").innerHTML = "Email Sent";                    
+            document.getElementById("status").className = "false";
+            document.getElementById("chngStatus").innerHTML = "";
+            document.getElementById("rmMessage").innerHTML = "";              
+        } else{               
+            
+            document.getElementById("status").className = "alert alert-success alert-dismissible fade show";
+            var txt = document.getElementById("chngStatus");
+            var rm = document.getElementById("rmMessage");
+            rm.innerHTML = "";
+            txt.innerHTML = "Email Sent";           
+            
+        }
+
         }      
     return true;          
 }
