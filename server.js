@@ -118,7 +118,7 @@ const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
                 if(flag == false){                    
                     res.send(`<h3>Oops... Error Sending Email!</h3><hr><br> <h5>${err}</h5>`);
                 }else{
-                    res.redirect('/thankyou');   
+                    res.redirect('/thankyouPage');   
                     exit = true;
             }
                     }
@@ -129,9 +129,9 @@ const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
 });
 
 // Final Page
-app.get("/thankyou",  (req,res) => {
+app.get("/thankyouPage",  (req,res) => {
     if(exit == true){
-        res.render('thankyou',{title: 'THANK YOU!'});
+        res.render('thankyouPage',{title: 'THANK YOU!'});
     } else {
         res.redirect('/');
     }
@@ -144,7 +144,7 @@ app.get('/downloadResume', (req, res) => {
   })
 
 app.get("*", (req,res) => {
-    res.render('error',{title: 'PAGE NOT FOUND'});
+    res.render('errorPage',{title: 'PAGE NOT FOUND'});
 })
 
 http.createServer(app).listen(HTTP_PORT, onHttpStart);
