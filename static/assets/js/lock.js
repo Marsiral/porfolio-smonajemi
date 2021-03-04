@@ -89,6 +89,6 @@
   
 var div = document.createElement('div');
 Object.defineProperty(div,'id',{get:function(){
-   window.location.replace("https://www.google.com");
+      window.location.replace("https://www.google.com");
 }});
 setTimeout(()=>console.log(div),1000)
