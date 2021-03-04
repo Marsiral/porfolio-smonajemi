@@ -11,24 +11,10 @@ function noBack() {
   setTimeout(0)
   window.history.forward(); }
     
-//     $(window).click(function (){
-//         $('.collapse').collapse('hide');
-//       });
-//       function isConsoleOpen() {
-//   var startTime = new Date();
-//   debugger;
-//   var endTime = new Date();
+  $(window).click(function (){
+      $('.collapse').collapse('hide');
+    });
 
-//   return endTime - startTime > 100;
-// }
-
-// $(function() {
-//   $(window).resize(function() {
-//     if(isConsoleOpen()) {
-//         alert("You're one sneaky dude, aren't you ?")
-//     }
-//   });
-// });
 !(function($) {
   "use strict";
 
