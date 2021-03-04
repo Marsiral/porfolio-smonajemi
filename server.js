@@ -52,7 +52,7 @@ app.post('/', (req, res) => {
     const data = fname && lname && email && phone && message;
   
     if(data === "") {
-        return res.render("partials/contact.hbs", { errorMsg: "Error in or more fields", title: 'Contact Me'});        
+        return res.render("partials/contact.hbs", { errorMsg: "Error in one or more fields", title: 'Contact Me'});        
     }  
 
 //Contact Button    
