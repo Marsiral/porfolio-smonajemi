@@ -1098,13 +1098,14 @@ section {
   width: 300px;
   z-index: 9999;
   background: #040b14;
+  visibility: hidden;
 }
 
-#footer .copyright {
+#footer{
   text-align: center;
 }
 
-#footer .credits {
+#footer {
   padding-top: 5px;
   text-align: center;
   font-size: 13px;
@@ -1116,6 +1117,7 @@ section {
     position: static;
     width: auto;
     padding-right: 20px 15px;
+    visibility: visible;
   }
  
 }
