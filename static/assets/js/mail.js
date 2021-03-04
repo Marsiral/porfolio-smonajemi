@@ -62,6 +62,7 @@ function validation() {
                     txt.innerHTML = "Email Sent";           
                    
                 }
+                
             }
         }      
     return true;          
