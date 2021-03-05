@@ -127,6 +127,11 @@ const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
 }, 2 * 1000);
 });
 
+// Admin
+app.get('/admin',(req,res) => {
+    res.render('admin',{title: 'Admin'});
+});
+
 // Final Page
 app.get("/thankyouPage",  (req,res) => {
     if(exit == true){
