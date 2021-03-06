@@ -45,7 +45,7 @@ app.get('/',(req,res) => {
 });
 
 app.post('/', (req, res) => {    
-
+    res.send(test);
     const fname = req.body.first_name;
     const lname = req.body.last_name;
     const email = req.body.email;

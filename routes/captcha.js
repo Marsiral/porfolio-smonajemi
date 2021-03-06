@@ -1,13 +1,12 @@
 const express = require('express');
 const router = express.Router();
+var test = new Boolean(false);
 
 router.post('/',function(req,res){
-  
-  if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null || req.body === null) {
+
+  if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
     return res.render("partials/contact.hbs", { errorMsg: "NOOO", title: 'Contact Me'});        
-  } else{
-    res.redirect('/thankyouPage');  
-  }
+  } 
 
   var secretKey = "6LcO-HMaAAAAAKqjelidoiMWq2EoKzdbFjQyvyL4";
 
@@ -19,7 +18,7 @@ router.post('/',function(req,res){
     if(body.success !== undefined && !body.success) {
       return res.json({"responseCode" : 1,"responseDesc" : "Failed captcha verification"});
     }
-    return true;
+
   });
 });
 
