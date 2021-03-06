@@ -1,2 +1,3 @@
 # Author: SINA MONAJEMI
-Date: Feb 27, 2021
+Personal portfolio written with NodeJS, JS, CSS & HBS.
+www.smonajemi.com
