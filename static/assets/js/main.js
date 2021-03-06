@@ -6,14 +6,14 @@
 */
 
 
-window.history.forward();
-function noBack() { 
-  setTimeout(0)
-  window.history.forward(); }
+// window.history.forward();
+// function noBack() { 
+//   setTimeout(0)
+//   window.history.forward(); }
     
-  $(window).click(function (){
-      $('.collapse').collapse('hide');
-    });
+//   $(window).click(function (){
+//       $('.collapse').collapse('hide');
+//     });
 
 !(function($) {
   "use strict";
