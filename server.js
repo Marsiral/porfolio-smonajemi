@@ -45,7 +45,7 @@ app.get('/',(req,res) => {
 });
 
 app.post('/', (req, res) => {    
-    res.send(test);
+
     const fname = req.body.first_name;
     const lname = req.body.last_name;
     const email = req.body.email;
@@ -56,7 +56,8 @@ app.post('/', (req, res) => {
     if(data === "") {
         return res.render("partials/contact.hbs", { errorMsg: "Error in one or more fields", title: 'Contact Me'});        
     } 
-  
+    
+ 
 
 //Contact Button    
 setTimeout(() => {
@@ -120,7 +121,7 @@ const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
                 if(flag == false){                    
                     res.send(`<h3>Oops... Error Sending Email!</h3><hr><br> <h5>${err}</h5>`);
                 }else{
-                    //res.redirect('/thankyouPage');   
+                    res.redirect('/thankyouPage');   
                     exit = true;
             }
                     }

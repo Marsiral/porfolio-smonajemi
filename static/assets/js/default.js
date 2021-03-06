@@ -11,10 +11,12 @@ $(window).click(function (){
 document.addEventListener('contextmenu', function(e) {      
       e.preventDefault();
   });
+
   if(document.title == "Contact Me"){
       let x = document.getElementById("footer");
       x.style.visibility = "visible";
 }
+
 
   document.onkeydown = function(e) {
     if(e.keyCode == 123) {
