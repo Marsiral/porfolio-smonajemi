@@ -9,7 +9,7 @@ var recaptcha = new Recaptcha('6LcO-HMaAAAAAOCceNR5rZt4rxHIp0F19c7mBdEA', '6LcO-
 
 router.post('/', recaptcha.middleware.verify, function(req, res){
   if (!req.recaptcha.error) {
-    // success code
+    res.redirect('/thankyouPage'); 
   } else {
     return res.render("partials/contact.hbs", { errorMsg: "Recaptcha Required!", title: 'Contact Me'});      
   }
