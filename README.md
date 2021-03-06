@@ -1,3 +1,4 @@
-# Author: SINA MONAJEMI
-Personal portfolio written with NodeJS, JS, CSS & HBS.
+# Author: SINA MONAJEMI - Portfolio
+Framework : NODEJS
+Languages: JS,CSS,HBS
 www.smonajemi.com
