@@ -2,19 +2,19 @@ const express = require('express');
 const router = express.Router();
 var recaptcha = new Recaptcha('6LcO-HMaAAAAAOCceNR5rZt4rxHIp0F19c7mBdEA', '6LcO-HMaAAAAAKqjelidoiMWq2EoKzdbFjQyvyL4');
 router.post('/',function(req,res){
-  recaptcha.verify(req, function(error, data){
+  
   // if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null || req.body === null) {
   //   return res.render("partials/contact.hbs", { errorMsg: "NOOO", title: 'Contact Me'});        
   // } else{
   //   res.redirect('/thankyouPage');  
   // }
-
-    if (!req.recaptcha.error) {
+ 
+    if (!req.recaptcha) {
       res.redirect('/thankyouPage');  
     } else {
-      return res.render("partials/contact.hbs", { errorMsg: "NOOO", title: 'Contact Me'}); 
+      return res.render("partials/contact.hbs", { errorMsg: "NOOO", title: 'Contact Me'});    
     }
-  });
+  
 
 
   // var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
