@@ -8,14 +8,12 @@ var recaptcha = new Recaptcha('6LcO-HMaAAAAAOCceNR5rZt4rxHIp0F19c7mBdEA', '6LcO-
 var options = {'hl':'de'};
 var recaptcha = new Recaptcha('6LcO-HMaAAAAAOCceNR5rZt4rxHIp0F19c7mBdEA', '6LcO-HMaAAAAAKqjelidoiMWq2EoKzdbFjQyvyL4', options);
 
-
 router.post('/', function(req, res){
   recaptcha.verify(req, function(error, data){
-    if (!req.recaptcha.error && validation() === true) {
+    if (!req.recaptcha.error) {
       alert("DONE");
     } else {
-      alert("NOOOO");
-      res.send("SINA");
+      return res.render("partials/contact.hbs", { errorMsg: "Missing", title: 'Contact Me'});
     }
   });
 });
