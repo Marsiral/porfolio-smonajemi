@@ -15,7 +15,7 @@ const SSL_KEY_FILE = ASSETS + "server.key";
 const SSL_CRT_FILE = ASSETS + "server.crt";
 const nodemailer = require("nodemailer");
 require ('./controllers/connection.js');
-const captcha = require('./routes/captcha.js');
+
 const https_options = {
     key: fs.readFileSync(__dirname + "/" + SSL_KEY_FILE),
     cert: fs.readFileSync(__dirname + "/" + SSL_CRT_FILE)
@@ -29,7 +29,7 @@ partialsDir: __dirname + '/views/partials'
 app.set('view engine', '.hbs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use('/', captcha);
+
 app.use(express.static('static'));
 app.use(clientSessions({
     cookieName: "session", // this is the object name that will be added to 'req'
