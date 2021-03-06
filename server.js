@@ -55,7 +55,8 @@ app.post('/', (req, res) => {
   
     if(data === "") {
         return res.render("partials/contact.hbs", { errorMsg: "Error in one or more fields", title: 'Contact Me'});        
-    }  
+    } 
+  
 
 //Contact Button    
 setTimeout(() => {
