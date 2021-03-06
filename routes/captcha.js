@@ -16,7 +16,7 @@ router.post('/',function(req,res){
     body = JSON.parse(body);
     // Success will be true or false depending upon captcha validation.
     if(body.success !== undefined && !body.success) {
-      return res.json({"responseCode" : 1,"responseDesc" : "Failed captcha verification"});
+      return res.send("SOMA");
     }
 
   });
