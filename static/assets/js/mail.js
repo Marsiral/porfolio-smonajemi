@@ -13,7 +13,7 @@ function validation() {
 
   
 
-    if(data.length == '' && res.length == 0){
+    if(data.length == '' || res.length == 0){
         text = "";
         error_message.innerHTML = text;
         return !exit;
