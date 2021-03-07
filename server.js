@@ -61,15 +61,13 @@ app.post('/', (req, res) => {
         return res.render("partials/contact.hbs", { errorMsg: "You can't leave Captcha Code empty", title: 'Contact Me'});        
     }
     var secretKey = "6Lcj6XQaAAAAALoUExIxDrCPb0lK781UeoUnCmdZ";
-  // req.connection.remoteAddress will provide IP address of connected user.
-  var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
-  // Hitting GET request to the URL, Google will respond with success or error scenario.
-  request(verificationUrl,function(error,response,body) {
-    body = JSON.parse(body);
-    // Success will be true or false depending upon captcha validation.
-    if(body.success !== undefined && !body.success) {
-      return false;
-    }
+    var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
+  
+    request(verificationUrl,function(error,response,body) {
+        body = JSON.parse(body);
+        if(body.success !== undefined && !body.success) {
+            return false;
+        }
     return true;
   });  
 setTimeout(() => {
