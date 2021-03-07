@@ -12,8 +12,13 @@ function validation() {
     var text;
 
   
+    if(res.length == 0){
+        text = "";
+        error_message.innerHTML = text;
+        return !exit;
+    } else {
 
-    if(data.length == '' || res.length == 0){
+    if(data.length == ''){
         text = "";
         error_message.innerHTML = text;
         return !exit;
@@ -67,6 +72,7 @@ function validation() {
             
         }
     }
+}
     return true;          
 }
 // function myFunction() {
