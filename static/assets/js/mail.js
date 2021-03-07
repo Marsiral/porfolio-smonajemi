@@ -48,7 +48,8 @@ function validation() {
         document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
         return !exit;
     }   
-    if(exit){           
+    if(exit){
+            document.getElementById('captcha').style.color = 'green';        
             document.getElementById('captcha').innerHTML="Completed!";
             document.getElementById("add").className = "alert alert-success alert-dismissible fade show";
             document.getElementById("addNewtx").innerHTML = "Email Sent";                    
@@ -57,6 +58,7 @@ function validation() {
             document.getElementById("rmMessage").innerHTML = ""; 
             flag = true;             
         } else{               
+            document.getElementById('captcha').style.color = 'green';       
             document.getElementById('captcha').innerHTML="Completed!";
             document.getElementById("status").className = "alert alert-success alert-dismissible fade show";
             var txt = document.getElementById("chngStatus");
