@@ -1,5 +1,10 @@
-const express = require('express');
-
+var widId = "";
+var onloadCallback = function ()
+{
+ widId = grecaptcha.render('recapchaWidget', {
+ 'sitekey':'6Lcj6XQaAAAAAI0s9ja70-abMFJy-LCUOjP2S5uh'
+         });
+};
 
   
 function validation() {
