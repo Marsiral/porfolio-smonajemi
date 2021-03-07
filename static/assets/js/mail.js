@@ -12,12 +12,7 @@ function validation() {
     var text;
 
   
-    if(res.length == 0){
-        text = "";
-        error_message.innerHTML = text;
-        return !exit;
-    } else {
-
+   
     if(data.length == ''){
         text = "";
         error_message.innerHTML = text;
@@ -47,14 +42,14 @@ function validation() {
         text = "Message field cannot be empty";
         error_message.innerHTML = text.toUpperCase();
         return !exit;
-    }    
+    } else    
     if(res.length == 0){
         text = "You can't leave Captcha Code empty";
         error_message.innerHTML = text.toUpperCase();
         document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
         return !exit;
     }
-    alert(exit);
+  
     if(exit){           
 
             document.getElementById("add").className = "alert alert-success alert-dismissible fade show";
@@ -72,8 +67,8 @@ function validation() {
             
         }
     }
-}
-    return true;          
+
+    return false;          
 }
 // function myFunction() {
 //     var res = grecaptcha.getResponse();
