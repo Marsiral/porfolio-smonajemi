@@ -48,17 +48,33 @@ app.get('/',(req,res) => {
 const RECAPTCHA_SECRET = "6Lcj6XQaAAAAALoUExIxDrCPb0lK781UeoUnCmdZ";
 app.post('/', (req, res) => {    
 
-    var recaptcha_url = "https://www.google.com/recaptcha/api/siteverify?";
-    recaptcha_url += "secret=" + RECAPTCHA_SECRET + "&";
-    recaptcha_url += "response=" + request.body["g-recaptcha-response"] + "&";
-    recaptcha_url += "remoteip=" + request.connection.remoteAddress;
-    Request(recaptcha_url, function(error, resp, body) {
-        body = JSON.parse(body);
-        if(body.success !== undefined && !body.success) {
-            return response.send({ "message": "Captcha validation failed" });
-        }
-        res.render('/thankyouPage')
-    });
+    if (req.body.recaptcha === undefined || req.body.recaptcha === '' || req.body.recaptcha === null) {
+		res.send({success: false, msg: 'Please select captcha first'});
+		return;
+	}
+	const secretKey = '6Lcj6XQaAAAAALoUExIxDrCPb0lK781UeoUnCmdZ';
+	const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.recaptcha}&remoteip=${req.connection.remoteAddress}`;
+	
+	https.get(verificationURL, (resG) => {
+		let rawData = '';
+		resG.on('data', (chunk) => { rawData += chunk })
+		resG.on('end', function() {
+			try {
+				var parsedData = JSON.parse(rawData);
+				if (parsedData.success === true) {
+					// All good, send contact email or perform other actions that required successful validation
+					res.send({success: true, msg: 'Your message has been sent. Thank you.'});
+					return;
+				} else {
+					res.send({success: false, msg: 'Failed captcha verification'});
+					return;
+				}
+			} catch (e) {
+				res.send({success: false, msg: 'Failed captcha verification from Google'});
+				return;
+			}
+		});
+	});
 });
 
 
