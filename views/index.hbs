@@ -43,29 +43,27 @@ input[type=submit]:hover {
 
 <div class="container">
   <form>
-               <div class="g-recaptcha" data-sitekey="6Lcj6XQaAAAAAI0s9ja70-abMFJy-LCUOjP2S5uh"></div>
- <button class="g-recaptcha" 
-        data-sitekey="6Lcj6XQaAAAAAI0s9ja70-abMFJy-LCUOjP2S5uh" 
-        data-callback='onSubmit' 
-        data-action='submit'>Submit</button>
+               <div class="g-recaptcha" id="rcaptcha" style="margin-left: 90px;" data-sitekey="6Lcj6XQaAAAAAI0s9ja70-abMFJy-LCUOjP2S5uh"></div>
+              <span id="captcha" style="margin-left:100px;color:red" />
+
   </form>
 </div>
+ <script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
-  var response = grecaptcha.getResponse();
-   if(response.length == 0){
-     alert("EMPTY");
-   }
- </script>
- <script src="https://www.google.com/recaptcha/api.js?render=6Lcj6XQaAAAAAI0s9ja70-abMFJy-LCUOjP2S5uh"></script>
-    <script>
-      function onClick(e) {
-        e.preventDefault();
-        grecaptcha.ready(function() {
-          grecaptcha.execute('6Lcj6XQaAAAAAI0s9ja70-abMFJy-LCUOjP2S5uh', {action: 'submit'}).then(function(token) {
-              // Add your logic to submit to your backend server here.
-          });
-        });
-      }
+function get_action(form) 
+{
+    var v = grecaptcha.getResponse();
+    if(v.length == 0)
+    {
+        document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
+        return false;
+    }
+    else
+    {
+        document.getElementById('captcha').innerHTML="Captcha completed";
+        return true; 
+    }
+}
   </script>
 </body>
 </html>
