@@ -128,8 +128,28 @@ const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
                 if(flag == false){                    
                     res.send(`<h3>Oops... Error Sending Email!</h3><hr><br> <h5>${err}</h5>`);
                 }else{
-                    //res.redirect('/thankyouPage');   
-                    exit = true;
+                    https.get(verificationURL, (resG) => {
+                        let rawData = '';
+                        resG.on('data', (chunk) => { rawData += chunk })
+                        resG.on('end', function() {
+                            try {
+                                var parsedData = JSON.parse(rawData);
+                                if (parsedData.success === true) {
+                                    // All good, send contact email or perform other actions that required successful validation
+                                    res.redirect('/thankyouPage');   
+                                    exit = true;
+                                    return;
+                                } else {
+                                    res.send({success: false, msg: 'Failed captcha verification'});
+                                    return;
+                                }
+                            } catch (e) {
+                                res.send({success: false, msg: 'Failed captcha verification from Google'});
+                                return;
+                            }
+                        });
+                    });
+                  
             }
                     }
         i++;
@@ -146,27 +166,7 @@ app.get('/admin',(req,res) => {
 // Final Page
 app.get("/thankyouPage",  (req,res) => {
     if(exit == true){
-        https.get(verificationURL, (resG) => {
-            let rawData = '';
-            resG.on('data', (chunk) => { rawData += chunk })
-            resG.on('end', function() {
-                try {
-                    var parsedData = JSON.parse(rawData);
-                    if (parsedData.success === true) {
-                        // All good, send contact email or perform other actions that required successful validation
-                        res.render('thankyouPage',{title: 'THANK YOU!'});
-                        return;
-                    } else {
-                        res.send({success: false, msg: 'Failed captcha verification'});
-                        return;
-                    }
-                } catch (e) {
-                    res.send({success: false, msg: 'Failed captcha verification from Google'});
-                    return;
-                }
-            });
-        });
-        
+        res.render('thankyouPage',{title: 'THANK YOU!'});
     } else {
         res.redirect('/');
     }
