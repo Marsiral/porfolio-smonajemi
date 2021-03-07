@@ -56,7 +56,7 @@ app.post('/', (req, res) => {
         if(body.success !== undefined && !body.success) {
             return response.send({ "message": "Captcha validation failed" });
         }
-        response.header("Content-Type", "application/json").send(body);
+        res.render('/thankyouPage')
     });
 });
 
