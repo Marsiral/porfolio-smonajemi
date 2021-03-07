@@ -1,6 +1,6 @@
 
 function validation() {
-   
+    var res = grecaptcha.getResponse();
     const fname = document.getElementById("first_name").value;
     const lname = document.getElementById("last_name").value;
     const email = document.getElementById("email").value;
@@ -41,8 +41,12 @@ function validation() {
         text = "Message field cannot be empty";
         error_message.innerHTML = text.toUpperCase();
         return !exit;
+    }    
+    if(res.length == 0){
+        text = "You can't leave Captcha Code empty";
+        error_message.innerHTML = text.toUpperCase();
+        return !exit;
     }
- 
     if(exit){           
 
             document.getElementById("add").className = "alert alert-success alert-dismissible fade show";
@@ -63,18 +67,18 @@ function validation() {
         }      
     return true;          
 }
-function myFunction() {
-    var res = grecaptcha.getResponse();
-    var flag = false;
-    if(res.length == 0) {
-        document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
-        flag = false;
-    } else {
-        document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
-         flag = true;
-    }
-    return flag;
-  }
+// function myFunction() {
+//     var res = grecaptcha.getResponse();
+//     var flag = false;
+//     if(res.length == 0) {
+//         document.getElementById('captcha').innerHTML="";
+//         flag = false;
+//     } else {
+//         document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
+//          flag = true;
+//     }
+//     return flag;
+//   }
 
 //   function emailvalidation()
 // {
@@ -99,22 +103,22 @@ function myFunction() {
 
 // }
 
-  function isValid()
-  {
-      var flag = true;
+//   function isValid()
+//   {
+//       var flag = true;
   
-      flag &= validation(),myFunction();
+//       flag &= validation(),myFunction();
   
-      if (flag)
-      {
-          return true;
-      }
-      else
-      {
-          return false;
-      }
+//       if (flag)
+//       {
+//           return true;
+//       }
+//       else
+//       {
+//           return false;
+//       }
   
-  } 
+//   } 
 
   $(document).ready(function() {
     if(validation() == true){

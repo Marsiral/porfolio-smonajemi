@@ -32,7 +32,7 @@
           </div>      
         <hr> <br>
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">           
-            <form method="POST" action="/" onsubmit="return isValid()" id="myForm">
+            <form method="POST" action="/" onsubmit="return validation()" id="myForm">
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="first_name">First Name</label>
@@ -62,7 +62,7 @@
               </div>                 
                      
                <button type="reset" class="btn" >Clear</button>
-               <button type="submit" id="submit" class="btn" onclick="myFunction()">Send</button>
+               <button type="submit" id="submit" class="btn">Send</button>
                <hr>
               <div class="addNew" role="alert" id="add">
                 <strong style="padding-right: 10px;" id="addNewtx"></strong>
