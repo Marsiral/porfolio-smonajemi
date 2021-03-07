@@ -45,6 +45,7 @@ function validation() {
     if(res.length == 0){
         text = "You can't leave Captcha Code empty";
         error_message.innerHTML = text.toUpperCase();
+        document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
         return !exit;
     }
     if(exit){           
