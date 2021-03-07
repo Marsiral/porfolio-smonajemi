@@ -46,7 +46,7 @@ app.get('/',(req,res) => {
 
 app.post('/', (req, res) => {    
   
-    const secretKey = '6LfG5nQaAAAAAL9DsPdjWsQ2y5N7zaoN4ohQ0K2K';
+    const secretKey = '6Lcj6XQaAAAAALoUExIxDrCPb0lK781UeoUnCmdZ';
 	const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.recaptcha}&remoteip=${req.connection.remoteAddress}`;
     if (req.body.recaptcha === undefined || req.body.recaptcha === '' || req.body.recaptcha === null) {
         return res.render("partials/contact.hbs", { errorMsg: "Please select captcha first'", title: 'Contact Me'});  

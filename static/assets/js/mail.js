@@ -47,6 +47,7 @@ function validation() {
     }
  
     if(exit){           
+            
             document.getElementById("add").className = "alert alert-success alert-dismissible fade show";
             document.getElementById("addNewtx").innerHTML = "Email Sent";                    
             document.getElementById("status").className = "false";
