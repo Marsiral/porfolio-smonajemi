@@ -46,7 +46,21 @@ app.get('/',(req,res) => {
 
 app.post('/', (req, res) => {    
 
-     const fname = req.body.first_name;
+    var recaptcha_url = "https://www.google.com/recaptcha/api/siteverify?";
+    recaptcha_url += "6Lcj6XQaAAAAALoUExIxDrCPb0lK781UeoUnCmdZ" + RECAPTCHA_SECRET + "&";
+    recaptcha_url += "response=" + request.body["g-recaptcha-response"] + "&";
+    recaptcha_url += "remoteip=" + request.connection.remoteAddress;
+    Request(recaptcha_url, function(error, resp, body) {
+        body = JSON.parse(body);
+        if(body.success !== undefined && !body.success) {
+            return response.send({ "message": "Captcha validation failed" });
+        }
+        response.header("Content-Type", "application/json").send(body);
+    });
+
+
+
+    const fname = req.body.first_name;
     const lname = req.body.last_name;
     const email = req.body.email;
     const phone = req.body.phone;
