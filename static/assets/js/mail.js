@@ -64,13 +64,15 @@ function validation() {
             var txt = document.getElementById("chngStatus");
             var rm = document.getElementById("rmMessage");
             rm.innerHTML = "";
-            txt.innerHTML = "Email Sent";      
-            flag = true;     
-            
+            txt.innerHTML = "Email Sent"; 
+            flag = true;           
         }
     }
-    alert(exit)
-    return flag;          
+
+    if(flag)
+    return true;
+    else 
+    return false;
 }
 // function myFunction() {
 //     var res = grecaptcha.getResponse();
