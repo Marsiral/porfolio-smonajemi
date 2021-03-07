@@ -51,8 +51,9 @@ input[type=submit]:hover {
   </form>
 </div>
 <script>
-   function onSubmit(token) {
-     document.getElementById("demo-form").submit();
+  var response = grecaptcha.getResponse();
+   if(response.length == 0){
+     alert("EMPTY");
    }
  </script>
  <script src="https://www.google.com/recaptcha/api.js?render=6Lcj6XQaAAAAAI0s9ja70-abMFJy-LCUOjP2S5uh"></script>
