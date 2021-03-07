@@ -14,7 +14,7 @@ const ASSETS = "./assets/";
 const SSL_KEY_FILE = ASSETS + "server.key";
 const SSL_CRT_FILE = ASSETS + "server.crt";
 const nodemailer = require("nodemailer");
-const Request = require("request");
+
 require ('./controllers/connection.js');
 // const captcha = require('./routes/captcha.js');
 const https_options = {
@@ -45,7 +45,7 @@ app.get('/',(req,res) => {
     res.render('index',{title: 'Sina Monajemi'});
 });
 
-const RECAPTCHA_SECRET = "6Lcj6XQaAAAAALoUExIxDrCPb0lK781UeoUnCmdZ";
+
 app.post('/', (req, res) => {    
 
     if (req.body.recaptcha === undefined || req.body.recaptcha === '' || req.body.recaptcha === null) {
