@@ -12,14 +12,15 @@
   <form>
                <div class="g-recaptcha" id="rcaptcha" style="margin-left: 90px;" data-sitekey="6Lcj6XQaAAAAAI0s9ja70-abMFJy-LCUOjP2S5uh"></div>
               <span id="captcha" style="margin-left:100px;color:red" />
+              <button onclick="myFunction()">Send</button>
+              <br><hr>
               <input type="" id="submit" class="btn"></input>
 
   </form>
 </div>
  <script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
-function get_action(form) 
-{
+  function myFunction() {
     var v = grecaptcha.getResponse();
     var flag = false;
     if(v.length == 0)
@@ -35,6 +36,8 @@ function get_action(form)
     if(flag){
       let x = document.getElementById("captcha").typ = 'submit';
     }
+  }
+
   </script>
 </body>
 </html>

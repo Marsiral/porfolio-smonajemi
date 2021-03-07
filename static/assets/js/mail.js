@@ -1,11 +1,4 @@
-$('form').on('submit', function(e) {
-    if(grecaptcha.getResponse() == "") {
-      e.preventDefault();
-      alert("You can't proceed!");
-    } else {
-      alert("Thank you");
-    }
-  });
+
 function validation() {
    
     const fname = document.getElementById("first_name").value;
@@ -66,7 +59,7 @@ function validation() {
             txt.innerHTML = "Email Sent";           
             
         }
-        onloadCallback();
+
         }      
     return true;          
 }
