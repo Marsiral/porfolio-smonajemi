@@ -46,13 +46,7 @@ app.get('/',(req,res) => {
 
 app.post('/', (req, res) => {    
 
-    if (req.body.recaptcha === undefined || req.body.recaptcha === '' || req.body.recaptcha === null) {
-		alert("Select Captcha!");
-	}
-    const secretKey = '6Lfjs3QaAAAAACU07gV0tyjqlWtVF7VN9-P3lVK5';
-	const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.recaptcha}&remoteip=${req.connection.remoteAddress}`;
-
-    const fname = req.body.first_name;
+     const fname = req.body.first_name;
     const lname = req.body.last_name;
     const email = req.body.email;
     const phone = req.body.phone;
@@ -62,8 +56,6 @@ app.post('/', (req, res) => {
     if(data === "") {
         return res.render("partials/contact.hbs", { errorMsg: "Error in one or more fields", title: 'Contact Me'});        
     } 
-    
- 
 
 //Contact Button    
 setTimeout(() => {
