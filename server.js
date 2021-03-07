@@ -45,11 +45,12 @@ app.get('/',(req,res) => {
 });
 
 app.post('/', (req, res) => {    
-
   
     const secretKey = '6Lfjs3QaAAAAACU07gV0tyjqlWtVF7VN9-P3lVK5';
 	const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.recaptcha}&remoteip=${req.connection.remoteAddress}`;
-
+    if (req.body.recaptcha === undefined || req.body.recaptcha === '' || req.body.recaptcha === null) {
+        return res.render("partials/contact.hbs", { errorMsg: "Please select captcha first'", title: 'Contact Me'});  
+	} else {
     const fname = req.body.first_name;
     const lname = req.body.last_name;
     const email = req.body.email;
@@ -59,10 +60,9 @@ app.post('/', (req, res) => {
   
     if(data === "") {
         return res.render("partials/contact.hbs", { errorMsg: "Error in one or more fields", title: 'Contact Me'});        
-    } else
-    if (req.body.recaptcha === undefined || req.body.recaptcha === '' || req.body.recaptcha === null) {
-        return res.render("partials/contact.hbs", { errorMsg: "Please select captcha first'", title: 'Contact Me'});  
-	} else { 
+    } 
+  
+ 
 
 //Contact Button    
 setTimeout(() => {
