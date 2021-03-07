@@ -1,4 +1,4 @@
-  {{!-- <!-- ======= Contact Section ======= -->
+  <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container">
         <div class="section-title">
@@ -67,7 +67,7 @@
               <div class="addNew" role="alert" id="add">
                 <strong style="padding-right: 10px;" id="addNewtx"></strong>
               </div>  
-             <div id="google_recaptcha"></div>
+              <div class="g-recaptcha" data-sitekey="6Lcj6XQaAAAAAI0s9ja70-abMFJy-LCUOjP2S5uh"></div>
             </form>
            
           </div>
@@ -81,35 +81,4 @@
     <script>
    
     </script>
-    {{>footer}} --}}
-
-
-    <div class="form-wrapper-outer">
-
-    <form action="/" method="POST" name="htmlform" id="test-form" novalidate>
-      <div class="field-wrapper">
-        <div id="message-wrap">
-          <span></span>
-        </div>
-      </div>
-      <div class="field-wrapper">
-        <input type="email" name="email" class="form-checkfield" id="" required>
-        <div class="field-placeholder"><span>Enter your email</span></div>
-      </div>
-      <div class="field-wrapper">
-        <input type="text" name="name" class="form-checkfield" id="" required>
-        <div class="field-placeholder"><span>Enter your name</span></div>
-      </div>
-      <div class="field-wrapper">
-        <input type="text" name="phone" class="form-checkfield" id="" required>
-        <div class="field-placeholder"><span>Enter your phone</span></div>
-      </div>
-      <div class="field-wrapper">
-        <div id="google_recaptcha"></div>
-      </div>
-      <div class="field-wrapper">
-        <input type="button" id="submit-test-form" value="Submit">
-      </div>
-    </form>
-
-  </div>
+    {{>footer}}
