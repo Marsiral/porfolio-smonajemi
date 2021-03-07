@@ -1,43 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- ======= Header ======= -->
+  {{>nav}}
 
-</head>
-<body>
+    <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+      <h1 style=""></h1>
+        {{!-- <p style="float: left;">I'm <span class="typed" data-typed-items="Sina Monajemi"></span></p> --}}
+    </div>
+  </section><!-- End Hero -->
 
-<h3>Contact Form</h3>
+    <main id="main">
+      {{>about}}
+      {{>skills}}
+      {{>resume}}
+      {{>contact}}
+    </main>
 
-<div class="container">
-  <form>
-               <div class="g-recaptcha" id="rcaptcha" style="margin-left: 90px;" data-sitekey="6Lcj6XQaAAAAAI0s9ja70-abMFJy-LCUOjP2S5uh"></div>
-              <span id="captcha" style="margin-left:100px;color:red" />
-              <button onclick="myFunction()">Send</button>
-              <br><hr>
-              <input type="" id="submit" class="btn"></input>
-
-  </form>
-</div>
- <script src="https://www.google.com/recaptcha/api.js"></script>
-<script>
-  function myFunction() {
-    var v = grecaptcha.getResponse();
-    var flag = false;
-    if(v.length == 0)
-    {
-        document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
-        return flag;
-    }
-    else
-    {
-        document.getElementById('captcha').innerHTML="Captcha completed";
-        return !flag; 
-    }
-    if(flag){
-      let x = document.getElementById("captcha").typ = 'submit';
-    }
-  }
-
-  </script>
-</body>
-</html>

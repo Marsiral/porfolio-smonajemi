@@ -62,14 +62,15 @@
               </div>                 
                      
                <button type="reset" class="btn" >Clear</button>
-               <button type="submit" id="submit" class="btn">Send</button>
+               <button type="submit" id="submit" class="btn" onclick="myFunction()">Send</button>
                <hr>
               <div class="addNew" role="alert" id="add">
                 <strong style="padding-right: 10px;" id="addNewtx"></strong>
               </div>  
-              <div class="g-recaptcha" data-sitekey="6Lcj6XQaAAAAAI0s9ja70-abMFJy-LCUOjP2S5uh"></div>
+              <div class="g-recaptcha" id="rcaptcha" data-sitekey="6Lcj6XQaAAAAAI0s9ja70-abMFJy-LCUOjP2S5uh"></div>
+              <span id="captcha" style="margin-left:100px;color:red" />
             </form>
-           
+           <input type="" id="submit" class="btn"></input>
           </div>
         </div>
         <br>
