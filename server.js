@@ -48,32 +48,22 @@ app.get('/',(req,res) => {
 
 app.post('/', (req, res) => {    
 
-    if (req.body.recaptcha === undefined || req.body.recaptcha === '' || req.body.recaptcha === null) {
-		res.send({success: false, msg: 'Please select captcha first'});
-		return;
-	}
-	const secretKey = '6Lcj6XQaAAAAALoUExIxDrCPb0lK781UeoUnCmdZ';
-	const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.recaptcha}&remoteip=${req.connection.remoteAddress}`;
-	
-	https.get(verificationURL, (resG) => {
-		let rawData = '';
-		resG.on('data', (chunk) => { rawData += chunk })
-		resG.on('end', function() {
-			try {
-				var parsedData = JSON.parse(rawData);
-				if (parsedData.success === true) {
-					// All good, send contact email or perform other actions that required successful validation
-					res.send({success: true, errorMsg: 'Your message has been sent. Thank you.'});
-					return;
-				} else {
-                    return res.render("partials/contact.hbs", { errorMsg: "Error in one or more fields", title: 'Contact Me'});    
-				}
-			} catch (e) {
-				res.send({success: false, errorMsg: 'Failed captcha verification from Google'});
-				return;
-			}
-		});
-	});
+    if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
+        return res.json({"responseCode" : 1,"responseDesc" : "Please select captcha"});
+      }
+      // Put your secret key here.
+      var secretKey = "6Lcj6XQaAAAAALoUExIxDrCPb0lK781UeoUnCmdZ";
+      // req.connection.remoteAddress will provide IP address of connected user.
+      var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
+      // Hitting GET request to the URL, Google will respond with success or error scenario.
+      request(verificationUrl,function(error,response,body) {
+        body = JSON.parse(body);
+        // Success will be true or false depending upon captcha validation.
+        if(body.success !== undefined && !body.success) {
+          return res.json({"responseCode" : 1,"responseDesc" : "Failed captcha verification"});
+        }
+        res.json({"responseCode" : 0,"responseDesc" : "Sucess"});
+      });
 });
 
 
