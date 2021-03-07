@@ -1,12 +1,23 @@
-var widId = "";
-var onloadCallback = function ()
-{
- widId = grecaptcha.render('recapchaWidget', {
- 'sitekey':'6Lcj6XQaAAAAAI0s9ja70-abMFJy-LCUOjP2S5uh'
-         });
-};
+var onloadCallback = function() {
+    grecaptcha.render('google_recaptcha', {
+      'sitekey' : '6Lcj6XQaAAAAAI0s9ja70-abMFJy-LCUOjP2S5uh'
+    });
+  };
 
-  
+  $("#myForm").click(function () {
+    if (checkifreqfld()) {
+      event.preventDefault();
+      var rcres = grecaptcha.getResponse();
+      if(rcres.length){
+        grecaptcha.reset();
+        alert("Form Submitted!","success");
+      }else{
+        alert("Please verify reCAPTCHA","error");
+      }
+    } else {
+        alert("Fill required fields!","error");
+    }
+});
 function validation() {
    
     const fname = document.getElementById("first_name").value;

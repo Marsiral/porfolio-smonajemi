@@ -48,21 +48,7 @@ app.get('/',(req,res) => {
 
 app.post('/', (req, res) => {    
 
-    if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
-        return res.render("partials/contact.hbs", { errorMsg: "Error in one or more fields", title: 'Contact Me'});  
-      }
-      // Put your secret key here.
-      var secretKey = "6Lcj6XQaAAAAALoUExIxDrCPb0lK781UeoUnCmdZ";
-      // req.connection.remoteAddress will provide IP address of connected user.
-      var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
-      // Hitting GET request to the URL, Google will respond with success or error scenario.
-      request(verificationUrl,function() {
-        // Success will be true or false depending upon captcha validation.
-        if(body.success !== undefined && !body.success) {
-            res.redirect('/thankyouPage'); 
-        }
-
-      });
+   
 });
 
 //     const fname = req.body.first_name;
