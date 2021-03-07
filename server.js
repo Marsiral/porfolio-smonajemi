@@ -14,6 +14,7 @@ const ASSETS = "./assets/";
 const SSL_KEY_FILE = ASSETS + "server.key";
 const SSL_CRT_FILE = ASSETS + "server.crt";
 const nodemailer = require("nodemailer");
+const Request = require("request");
 require ('./controllers/connection.js');
 // const captcha = require('./routes/captcha.js');
 const https_options = {
