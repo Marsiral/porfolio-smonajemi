@@ -45,10 +45,13 @@ app.get('/',(req,res) => {
 });
 
 app.post('/', (req, res) => {    
-  
-    const secretKey = '6Lcj6XQaAAAAALoUExIxDrCPb0lK781UeoUnCmdZ';
+
+    if (req.body.recaptcha === undefined || req.body.recaptcha === '' || req.body.recaptcha === null) {
+		alert("Select Captcha!");
+	}
+    const secretKey = '6Lfjs3QaAAAAACU07gV0tyjqlWtVF7VN9-P3lVK5';
 	const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.recaptcha}&remoteip=${req.connection.remoteAddress}`;
-  
+
     const fname = req.body.first_name;
     const lname = req.body.last_name;
     const email = req.body.email;
@@ -59,7 +62,7 @@ app.post('/', (req, res) => {
     if(data === "") {
         return res.render("partials/contact.hbs", { errorMsg: "Error in one or more fields", title: 'Contact Me'});        
     } 
-  
+    
  
 
 //Contact Button    
@@ -124,26 +127,8 @@ const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
                 if(flag == false){                    
                     res.send(`<h3>Oops... Error Sending Email!</h3><hr><br> <h5>${err}</h5>`);
                 }else{
-                    https.get(verificationURL, (resG) => {
-                        let rawData = '';
-                        resG.on('data', (chunk) => { rawData += chunk })
-                        resG.on('end', function() {
-                            try {
-                                var parsedData = JSON.parse(rawData);
-                                if (parsedData.success === true) {
-                                    // All good, send contact email or perform other actions that required successful validation
-                                    res.redirect('/thankyouPage');   
-                                    exit = true;
-                                    return;
-                                } else {
-                                    return res.render("partials/contact.hbs", { errorMsg: "Failed captcha verification", title: 'Contact Me'});   
-                                                              }
-                            } catch (e) {
-                                return res.render("partials/contact.hbs", { errorMsg: "Failed captcha verification from Google", title: 'Contact Me'});  
-                            }
-                        });
-                    });
-                  
+                    res.redirect('/thankyouPage');   
+                    exit = true;
             }
                     }
         i++;
