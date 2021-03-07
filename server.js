@@ -48,7 +48,7 @@ const RECAPTCHA_SECRET = "6Lcj6XQaAAAAALoUExIxDrCPb0lK781UeoUnCmdZ";
 app.post('/', (req, res) => {    
 
     var recaptcha_url = "https://www.google.com/recaptcha/api/siteverify?";
-    recaptcha_url += "6Lcj6XQaAAAAALoUExIxDrCPb0lK781UeoUnCmdZ" + RECAPTCHA_SECRET + "&";
+    recaptcha_url += "secret=" + RECAPTCHA_SECRET + "&";
     recaptcha_url += "response=" + request.body["g-recaptcha-response"] + "&";
     recaptcha_url += "remoteip=" + request.connection.remoteAddress;
     Request(recaptcha_url, function(error, resp, body) {
