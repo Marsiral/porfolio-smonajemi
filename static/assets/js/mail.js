@@ -48,17 +48,16 @@ function validation() {
         error_message.innerHTML = text.toUpperCase();
         document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
         return !exit;
-    }
-  
+    }   
     if(exit){           
-
+            document.getElementById('captcha').innerHTML="Completed!";
             document.getElementById("add").className = "alert alert-success alert-dismissible fade show";
             document.getElementById("addNewtx").innerHTML = "Email Sent";                    
             document.getElementById("status").className = "false";
             document.getElementById("chngStatus").innerHTML = "";
             document.getElementById("rmMessage").innerHTML = "";              
         } else{               
-            
+            document.getElementById('captcha').innerHTML="Completed!";
             document.getElementById("status").className = "alert alert-success alert-dismissible fade show";
             var txt = document.getElementById("chngStatus");
             var rm = document.getElementById("rmMessage");
@@ -68,7 +67,7 @@ function validation() {
         }
     }
 
-    return false;          
+    return true;          
 }
 // function myFunction() {
 //     var res = grecaptcha.getResponse();
