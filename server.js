@@ -55,9 +55,9 @@ app.post('/', (req, res) => {
     const phone = req.body.phone;
     const message = req.body.message;
     const data = fname && lname && email && phone && message;  
-    if(data === "") {
-        return res.render("partials/contact.hbs", { errorMsg: "Error in one or more fields", title: 'Contact Me'});        
-    } 
+    // if(data === "") {
+    //     return res.render("partials/contact.hbs", { errorMsg: "Error in one or more fields", title: 'Contact Me'});        
+    // } 
 
 setTimeout(() => {
 
