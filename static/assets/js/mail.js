@@ -66,8 +66,8 @@ function validation() {
             
         }
     }
-
-    return true;          
+    alert(exit)
+    return exit;          
 }
 // function myFunction() {
 //     var res = grecaptcha.getResponse();
