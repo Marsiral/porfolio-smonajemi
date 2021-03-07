@@ -6,7 +6,7 @@ function myFunction() {
         document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
         flag = false;
     } else {
-        document.getElementById("captcha").typ = 'submit';
+        alert("SINA")
          flag = true;
     }
     return flag;
