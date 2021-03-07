@@ -46,7 +46,7 @@ app.get('/',(req,res) => {
 
 app.post('/', (req, res) => {    
   
-    const secretKey = '6Lfjs3QaAAAAACU07gV0tyjqlWtVF7VN9-P3lVK5';
+    const secretKey = '6LfG5nQaAAAAAL9DsPdjWsQ2y5N7zaoN4ohQ0K2K';
 	const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.recaptcha}&remoteip=${req.connection.remoteAddress}`;
     if (req.body.recaptcha === undefined || req.body.recaptcha === '' || req.body.recaptcha === null) {
         return res.render("partials/contact.hbs", { errorMsg: "Please select captcha first'", title: 'Contact Me'});  
@@ -138,12 +138,10 @@ const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
                                     exit = true;
                                     return;
                                 } else {
-                                    res.send({success: false, msg: 'Failed captcha verification'});
-                                    return;
-                                }
+                                    return res.render("partials/contact.hbs", { errorMsg: "Failed captcha verification", title: 'Contact Me'});   
+                                                              }
                             } catch (e) {
-                                res.send({success: false, msg: 'Failed captcha verification from Google'});
-                                return;
+                                return res.render("partials/contact.hbs", { errorMsg: "Failed captcha verification from Google", title: 'Contact Me'});  
                             }
                         });
                     });
