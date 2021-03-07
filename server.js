@@ -46,10 +46,7 @@ app.get('/',(req,res) => {
 
 app.post('/', (req, res) => {    
 
-    if (req.body.recaptcha === undefined || req.body.recaptcha === '' || req.body.recaptcha === null) {
-		res.send({success: false, err: 'Please select captcha first'});
-		return;
-	}
+  
     const secretKey = '6Lfjs3QaAAAAACU07gV0tyjqlWtVF7VN9-P3lVK5';
 	const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.recaptcha}&remoteip=${req.connection.remoteAddress}`;
 
@@ -63,7 +60,9 @@ app.post('/', (req, res) => {
     if(data === "") {
         return res.render("partials/contact.hbs", { errorMsg: "Error in one or more fields", title: 'Contact Me'});        
     } 
-    
+    if (req.body.recaptcha === undefined || req.body.recaptcha === '' || req.body.recaptcha === null) {
+        return res.render("partials/contact.hbs", { errorMsg: "Please select captcha first'", title: 'Contact Me'});  
+	}
  
 
 //Contact Button    
