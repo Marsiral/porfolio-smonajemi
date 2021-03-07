@@ -44,6 +44,7 @@ app.get('/',(req,res) => {
     res.render('index',{title: 'Sina Monajemi'});
 });
 
+const RECAPTCHA_SECRET = "6Lcj6XQaAAAAALoUExIxDrCPb0lK781UeoUnCmdZ";
 app.post('/', (req, res) => {    
 
     var recaptcha_url = "https://www.google.com/recaptcha/api/siteverify?";
