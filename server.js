@@ -48,9 +48,7 @@ app.post('/', (req, res) => {
   
     const secretKey = '6Lcj6XQaAAAAALoUExIxDrCPb0lK781UeoUnCmdZ';
 	const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.recaptcha}&remoteip=${req.connection.remoteAddress}`;
-    if (req.body.recaptcha === undefined || req.body.recaptcha === '' || req.body.recaptcha === null) {
-        return res.render("partials/contact.hbs", { errorMsg: "Please select captcha first'", title: 'Contact Me'});  
-	} else {
+  
     const fname = req.body.first_name;
     const lname = req.body.last_name;
     const email = req.body.email;
@@ -152,7 +150,6 @@ const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
         });    
     });  
 }, 2 * 1000);
-    }
 });
 
 // Admin
