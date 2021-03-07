@@ -50,7 +50,7 @@ function validation() {
     }   
     if(exit){
             document.getElementById('captcha').style.color = 'green';        
-            document.getElementById('captcha').innerHTML="Verified!";
+            document.getElementById('captcha').innerHTML="Success!";
             document.getElementById("add").className = "alert alert-success alert-dismissible fade show";
             document.getElementById("addNewtx").innerHTML = "Email Sent";                    
             document.getElementById("status").className = "false";
@@ -59,7 +59,7 @@ function validation() {
             flag = true;             
         } else{               
             document.getElementById('captcha').style.color = 'green';       
-            document.getElementById('captcha').innerHTML="Verified!";
+            document.getElementById('captcha').innerHTML="Success!";
             document.getElementById("status").className = "alert alert-success alert-dismissible fade show";
             var txt = document.getElementById("chngStatus");
             var rm = document.getElementById("rmMessage");
