@@ -9,6 +9,7 @@ function validation() {
     const data = fname || lname || email || phone || message;
     const error_message = document.getElementById("error_message");
     let exit = Boolean(true);
+    let flag = Boolean(false);
     var text;
 
   
@@ -55,19 +56,21 @@ function validation() {
             document.getElementById("addNewtx").innerHTML = "Email Sent";                    
             document.getElementById("status").className = "false";
             document.getElementById("chngStatus").innerHTML = "";
-            document.getElementById("rmMessage").innerHTML = "";              
+            document.getElementById("rmMessage").innerHTML = ""; 
+            flag = true;             
         } else{               
             document.getElementById('captcha').innerHTML="Completed!";
             document.getElementById("status").className = "alert alert-success alert-dismissible fade show";
             var txt = document.getElementById("chngStatus");
             var rm = document.getElementById("rmMessage");
             rm.innerHTML = "";
-            txt.innerHTML = "Email Sent";           
+            txt.innerHTML = "Email Sent";      
+            flag = true;     
             
         }
     }
     alert(exit)
-    return exit;          
+    return flag;          
 }
 // function myFunction() {
 //     var res = grecaptcha.getResponse();
