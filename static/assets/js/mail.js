@@ -11,12 +11,7 @@ function validation() {
     let exit = Boolean(true);
     var text;
 
-    if(res.length == 0){
-        text = "You can't leave Captcha Code empty";
-        error_message.innerHTML = text.toUpperCase();
-        document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
-        return !exit;
-    } else {
+  
 
     if(data.length == ''){
         text = "";
@@ -48,7 +43,13 @@ function validation() {
         error_message.innerHTML = text.toUpperCase();
         return !exit;
     }    
-  
+    if(res.length == 0){
+        text = "You can't leave Captcha Code empty";
+        error_message.innerHTML = text.toUpperCase();
+        document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
+        return !exit;
+    }
+    alert(exit);
     if(exit){           
 
             document.getElementById("add").className = "alert alert-success alert-dismissible fade show";
@@ -65,8 +66,6 @@ function validation() {
             txt.innerHTML = "Email Sent";           
             
         }
-
-        }      
     }
     return true;          
 }
