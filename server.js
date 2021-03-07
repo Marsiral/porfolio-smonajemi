@@ -59,11 +59,10 @@ app.post('/', (req, res) => {
   
     if(data === "") {
         return res.render("partials/contact.hbs", { errorMsg: "Error in one or more fields", title: 'Contact Me'});        
-    } 
+    } else
     if (req.body.recaptcha === undefined || req.body.recaptcha === '' || req.body.recaptcha === null) {
         return res.render("partials/contact.hbs", { errorMsg: "Please select captcha first'", title: 'Contact Me'});  
-	}
- 
+	} else { 
 
 //Contact Button    
 setTimeout(() => {
@@ -155,6 +154,7 @@ const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
         });    
     });  
 }, 2 * 1000);
+    }
 });
 
 // Admin
