@@ -1,9 +1,11 @@
-var onloadCallback = function() {
-    grecaptcha.render('g-recaptcha', {
-      'sitekey' : '6Lcj6XQaAAAAAI0s9ja70-abMFJy-LCUOjP2S5uh'
-    });
-  };
-
+$('form').on('submit', function(e) {
+    if(grecaptcha.getResponse() == "") {
+      e.preventDefault();
+      alert("You can't proceed!");
+    } else {
+      alert("Thank you");
+    }
+  });
 function validation() {
    
     const fname = document.getElementById("first_name").value;
@@ -21,7 +23,7 @@ function validation() {
         text = "";
         error_message.innerHTML = text;
         return !exit;
-    }else{
+    } else{
     if(fname.length == '' && !isNaN(fname)){
         text = "Please Enter Your First Name!";
         error_message.innerHTML = text.toUpperCase();
@@ -64,7 +66,7 @@ function validation() {
             txt.innerHTML = "Email Sent";           
             
         }
-
+        onloadCallback();
         }      
     return true;          
 }
