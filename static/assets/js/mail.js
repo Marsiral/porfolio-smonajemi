@@ -11,7 +11,7 @@ function validation() {
     let exit = Boolean(true);
     let flag = Boolean(false);
     var text;
-
+    
   
    
     if(data.length == ''){

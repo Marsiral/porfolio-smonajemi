@@ -14,7 +14,7 @@ const ASSETS = "./assets/";
 const SSL_KEY_FILE = ASSETS + "server.key";
 const SSL_CRT_FILE = ASSETS + "server.crt";
 const nodemailer = require("nodemailer");
-
+const request = require('request');
 require ('./controllers/connection.js');
 // const captcha = require('./routes/captcha.js');
 const https_options = {
@@ -46,19 +46,29 @@ app.get('/',(req,res) => {
 });
 
 
-app.post('/', (req, res) => {    
-
-
+app.post('/', (req, res) => {
     const fname = req.body.first_name;
     const lname = req.body.last_name;
     const email = req.body.email;
     const phone = req.body.phone;
     const message = req.body.message;
+    const recaptcha = req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null;
     const data = fname && lname && email && phone && message;  
-    // if(data === "") {
-    //     return res.render("partials/contact.hbs", { errorMsg: "Error in one or more fields", title: 'Contact Me'});        
-    // } 
-
+    if(data === "" || recaptcha) {
+        return res.render("partials/contact.hbs", { errorMsg: "Error in one or more fields", title: 'Contact Me'});        
+    }
+    var secretKey = "6Lcj6XQaAAAAALoUExIxDrCPb0lK781UeoUnCmdZ";
+  // req.connection.remoteAddress will provide IP address of connected user.
+  var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
+  // Hitting GET request to the URL, Google will respond with success or error scenario.
+  request(verificationUrl,function(error,response,body) {
+    body = JSON.parse(body);
+    // Success will be true or false depending upon captcha validation.
+    if(body.success !== undefined && !body.success) {
+      return false;
+    }
+    return true;
+  });  
 setTimeout(() => {
 
 var admin = `contactsinamon@gmail.com`;
