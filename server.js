@@ -63,14 +63,14 @@ app.post('/', (req, res) => {
 				var parsedData = JSON.parse(rawData);
 				if (parsedData.success === true) {
 					// All good, send contact email or perform other actions that required successful validation
-					res.send({success: true, msg: 'Your message has been sent. Thank you.'});
+					res.send({success: true, errorMsg: 'Your message has been sent. Thank you.'});
 					return;
 				} else {
-					res.send({success: false, msg: 'Failed captcha verification'});
+					res.send({success: false, errorMsg: 'Failed captcha verification'});
 					return;
 				}
 			} catch (e) {
-				res.send({success: false, msg: 'Failed captcha verification from Google'});
+				res.send({success: false, errorMsg: 'Failed captcha verification from Google'});
 				return;
 			}
 		});
