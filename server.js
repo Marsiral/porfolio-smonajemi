@@ -54,8 +54,11 @@ app.post('/', (req, res) => {
     const message = req.body.message;
     const recaptcha = req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null;
     const data = fname && lname && email && phone && message;  
-    if(data === "" || recaptcha) {
+    if(data === "") {
         return res.render("partials/contact.hbs", { errorMsg: "Error in one or more fields", title: 'Contact Me'});        
+    }
+    if(recaptcha) {
+        return res.render("partials/contact.hbs", { errorMsg: "You can't leave Captcha Code empty", title: 'Contact Me'});        
     }
     var secretKey = "6Lcj6XQaAAAAALoUExIxDrCPb0lK781UeoUnCmdZ";
   // req.connection.remoteAddress will provide IP address of connected user.
