@@ -49,7 +49,7 @@ app.get('/',(req,res) => {
 app.post('/', (req, res) => {    
 
     if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
-        return res.json({"responseCode" : 1,"responseDesc" : "Please select captcha"});
+        return res.render("partials/contact.hbs", { errorMsg: "Error in one or more fields", title: 'Contact Me'});  
       }
       // Put your secret key here.
       var secretKey = "6Lcj6XQaAAAAALoUExIxDrCPb0lK781UeoUnCmdZ";
