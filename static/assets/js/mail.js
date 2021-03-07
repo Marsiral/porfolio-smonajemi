@@ -11,7 +11,7 @@ function validation() {
     let exit = Boolean(true);
     let flag = Boolean(false);
     var text;
-
+    
   
    
     if(data.length == ''){
@@ -43,7 +43,7 @@ function validation() {
         text = "Message field cannot be empty";
         error_message.innerHTML = text.toUpperCase();
         return !exit;
-    }    
+    } else    
     if(res.length == 0){
         text = "You can't leave Captcha Code empty";
         error_message.innerHTML = text.toUpperCase();
