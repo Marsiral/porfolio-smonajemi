@@ -63,7 +63,18 @@ function validation() {
         }      
     return true;          
 }
-
+function myFunction() {
+    var res = grecaptcha.getResponse();
+    var flag = false;
+    if(res.length == 0) {
+        document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
+        flag = false;
+    } else {
+        document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
+         flag = true;
+    }
+    return flag;
+  }
 
 //   function emailvalidation()
 // {
@@ -88,23 +99,22 @@ function validation() {
 
 // }
 
-//   function isValid()
-//   {
-//       var flag = true;
+  function isValid()
+  {
+      var flag = true;
   
-//       flag &= emailvalidation();
-    
+      flag &= validation(),myFunction();
   
-//       if (flag)
-//       {
-//           return true;
-//       }
-//       else
-//       {
-//           return false;
-//       }
+      if (flag)
+      {
+          return true;
+      }
+      else
+      {
+          return false;
+      }
   
-//   } 
+  } 
 
   $(document).ready(function() {
     if(validation() == true){
