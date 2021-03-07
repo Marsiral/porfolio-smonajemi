@@ -56,10 +56,7 @@ app.post('/', (req, res) => {
         if(body.success !== undefined && !body.success) {
             return response.send({ "message": "Captcha validation failed" });
         }
-        response.header("Content-Type", "application/json").send(body);
-    });
-
-
+         
 
     const fname = req.body.first_name;
     const lname = req.body.last_name;
@@ -142,6 +139,7 @@ const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
         });    
     });  
 }, 2 * 1000);
+});
 });
 
 // Admin
