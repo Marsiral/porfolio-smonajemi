@@ -66,8 +66,7 @@ app.post('/', (req, res) => {
 					res.send({success: true, errorMsg: 'Your message has been sent. Thank you.'});
 					return;
 				} else {
-					res.send({success: false, errorMsg: 'Failed captcha verification'});
-					return;
+                    return res.render("partials/contact.hbs", { errorMsg: "Error in one or more fields", title: 'Contact Me'});    
 				}
 			} catch (e) {
 				res.send({success: false, errorMsg: 'Failed captcha verification from Google'});
