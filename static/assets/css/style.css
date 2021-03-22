@@ -803,7 +803,7 @@ section {
   color: #709fb0;
   border-color:#f4d160;  
 }
-button:focus { outline: none !important; box-shadow: none !important; }
+
 .contact .coninfo h4 {
   padding: 0 0 0 60px;
   font-size: 22px;
@@ -1236,12 +1236,3 @@ button:focus { outline: none !important; box-shadow: none !important; }
 	animation-delay:0s;
 	-webkit-animation-delay:0s; /* Safari 和 Chrome */
 }
-
-
-
-
-
-
-
-
-
