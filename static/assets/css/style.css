@@ -1128,13 +1128,14 @@ section {
 	position: absolute;
 	left: 50%;
 	margin-left: -30px;
-	bottom: 20px;
+	bottom: 50px;
 }
 
 .arrows path {
-	stroke: #f4d160;
+  font-weight: bold;
+  stroke: #709fb0;
 	fill: transparent;
-	stroke-width: 1px;	
+	stroke-width: 5px;	
 	animation: arrow 2s infinite;
 	-webkit-animation: arrow 2s infinite; 
 }
