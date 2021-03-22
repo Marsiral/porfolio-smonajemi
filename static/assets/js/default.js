@@ -74,4 +74,7 @@ var div = document.createElement('div');
 Object.defineProperty(div,'id',{get:function(){
       window.location.replace("https://www.google.com");
 }});
+Object.defineProperty(console, '_commandLineAPI',
+ {get : function() { throw 'Nooo!' } 
+})
 setTimeout(()=>console.log(div),1000)

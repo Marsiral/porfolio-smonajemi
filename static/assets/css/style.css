@@ -785,6 +785,72 @@ section {
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
 }
 
+.contact .coninfo i {
+  font-size: 20px;
+  color: #f4d160;
+  float: left;
+  width: 44px;
+  height: 44px;
+  background: #dff3fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+.btn-outline-info, .btn-outline-info:hover, .btn-outline-info:active, .btn-outline-info:visited {
+  background-color: unset !important;
+  color: #709fb0;
+  border-color:#f4d160;  
+}
+button:focus { outline: none !important; box-shadow: none !important; }
+.contact .coninfo h4 {
+  padding: 0 0 0 60px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #709fb0;
+}
+
+.contact .coninfo p {
+  padding: 0 0 10px 60px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #709fb0;
+}
+
+.contact .coninfo .email p {
+  padding-top: 5px;
+}
+
+.contact .coninfo .social-links {
+  padding-left: 60px;
+}
+
+.contact .coninfo .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+  margin-right: 10px;
+}
+
+.contact .coninfo .social-links a:hover {
+  background: #f4d160;
+  color: #fff;
+}
+
+.contact .coninfo .email:hover i, .contact .coninfo .address:hover i, .contact .coninfo .phone:hover i {
+  background: #f4d160;
+  color: #fff;
+}
 .contact .info i {
   font-size: 20px;
   color: #f4d160;
