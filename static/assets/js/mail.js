@@ -14,8 +14,6 @@ function validation() {
   
    
     if(data.length == ''){
-        // text = "";
-        // error_message.innerHTML = text;
         return !exit;
     } else{
     if(fname.length == '' && !isNaN(fname)){
@@ -42,7 +40,11 @@ function validation() {
         text = "Message field cannot be empty";
         error_message.innerHTML = text.toUpperCase();
         return !exit;
-    } 
+    } else    
+    if((grecaptcha.getResponse()).length == 0){
+        document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
+        return !exit;
+    }   
     if(exit){
             document.getElementById('captcha').style.color = 'green';        
             document.getElementById('captcha').innerHTML="Success!";
