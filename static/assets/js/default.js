@@ -76,4 +76,12 @@ Object.defineProperty(div,'id',{get:function(){
 }});
 setTimeout(()=>console.log(div),1000)
 
-
+// CHANGE TXT COLOR
+var i = 0;
+function change() {
+  var doc = document.getElementById("chtext");
+  var color = ["#f4d160", "#709fb0", "#f4d160", "#709fb0"];
+  doc.style.color = color[i];
+  i = (i + 1) % color.length;
+}
+setInterval(change, 1000);

@@ -13,7 +13,9 @@ body {
   color: #272829;
 }
 
-
+#conme{
+  visibility: hidden;
+}
 a {
   text-decoration: none;
   color: #a8a9b4;
@@ -26,6 +28,10 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
+}
+#chtext {
+  animation: change 1s step-end both;
+  animation: change1 1s step-end both;
 }
 
 /*--------------------------------------------------------------
@@ -159,6 +165,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.3s;
   font-size: 15px;
 }
+
 
 .nav-menu a i {
   font-size: 24px;
@@ -294,7 +301,7 @@ textarea {
   #hero {
     background-attachment: fixed;
   }
- 
+
 }
 
 @media (max-width: 768px) {
@@ -307,7 +314,7 @@ textarea {
     line-height: 24px;
     margin-bottom: 30px;
   }
- 
+
 }
 
 /*--------------------------------------------------------------
@@ -769,7 +776,9 @@ section {
   .testimonials {
     margin: 30px 10px;
   }
- 
+  #conme{
+    visibility: visible;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1074,7 +1083,9 @@ section {
   .breadcrumbs ol li {
     display: inline-block;
   }
- 
+  #conme{
+    visibility: visible;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1161,8 +1172,10 @@ section {
   .portfolio-details .portfolio-info {
     position: static;
     margin-top: 30px;
-
   } 
+  #conme{
+    visibility: visible;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1195,7 +1208,9 @@ section {
     padding-right: 20px 15px;
     visibility: visible;
   }
- 
+  #conme{
+    visibility: visible;
+  }
 }
 
 
@@ -1249,3 +1264,4 @@ section {
 	animation-delay:0s;
 	-webkit-animation-delay:0s; /* Safari 和 Chrome */
 }
+
