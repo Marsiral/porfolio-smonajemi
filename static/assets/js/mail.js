@@ -1,6 +1,5 @@
 
 function validation() {
-    var res = grecaptcha.getResponse();
     const fname = document.getElementById("first_name").value;
     const lname = document.getElementById("last_name").value;
     const email = document.getElementById("email").value;
@@ -15,8 +14,8 @@ function validation() {
   
    
     if(data.length == ''){
-        text = "";
-        error_message.innerHTML = text;
+        // text = "";
+        // error_message.innerHTML = text;
         return !exit;
     } else{
     if(fname.length == '' && !isNaN(fname)){
@@ -43,11 +42,7 @@ function validation() {
         text = "Message field cannot be empty";
         error_message.innerHTML = text.toUpperCase();
         return !exit;
-    } else    
-    if(res.length == 0){
-        document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
-        return !exit;
-    }   
+    } 
     if(exit){
             document.getElementById('captcha').style.color = 'green';        
             document.getElementById('captcha').innerHTML="Success!";
