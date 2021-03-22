@@ -31,7 +31,7 @@ app.set('view engine', '.hbs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 // app.use('/', captcha);
-app.use(express.static('static'));
+app.use(express.static(path.join(__dirname, 'static')));
 app.use(clientSessions({
     cookieName: "session", // this is the object name that will be added to 'req'
     secret: "smonajemi", // this should be a long un-guessable string.
