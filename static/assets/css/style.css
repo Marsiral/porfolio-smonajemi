@@ -808,13 +808,14 @@ section {
   font-family: 'Montserrat', sans-serif;
   display: inline-block;
   padding: 12px 30px;
-  font-weight: 400;
+  font-weight: 200;
   color: #709fb0;
   border-color:#f4d160; 
   border-radius: 40px;
   text-decoration: none;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
+  font-size: 10px;
 }
 .contact .coninfo h4 {
   padding: 0 0 0 60px;
