@@ -76,3 +76,4 @@ Object.defineProperty(div,'id',{get:function(){
 }});
 setTimeout(()=>console.log(div),1000)
 
+
