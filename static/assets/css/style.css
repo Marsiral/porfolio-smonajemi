@@ -799,7 +799,7 @@ section {
   border-radius: 50px;
   transition: all 0.3s ease-in-out;
 }
-.btn-outline-info, .btn-outline-info:hover, .btn-outline-info:active, .btn-outline-info:visited {
+.btn, .btn:hover, .btn:active, .btn:visited {
   background-color: unset !important;
   color: #709fb0;
   border-color:#f4d160;  
