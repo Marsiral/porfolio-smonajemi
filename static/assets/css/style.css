@@ -334,7 +334,7 @@ section {
 }
 
 .section-title h2 {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bold;
   margin-bottom: 20px;
   padding-bottom: 20px;
@@ -360,7 +360,7 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
-.about .content h3 {
+.about .content h2 {
   font-weight: 700;
   font-size: 26px;
   color: #709fb0;
@@ -1265,6 +1265,6 @@ section {
 	-webkit-animation-delay:0s; /* Safari 和 Chrome */
 }
 
-.typed[
-  
-]
+.typed:focus{
+  outline: none;
+}
