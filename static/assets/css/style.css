@@ -818,6 +818,25 @@ section {
   padding: 12px 30px;
   font-weight: 200;
   color: #709fb0;
+  border-color:#999; 
+  border-radius: 40px;
+  text-decoration: none;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  font-size: 12px;
+}
+
+.btn1:hover, .btn1:active, .btn1:visited {
+  background-color: unset !important;
+  color: #709fb0;
+  border-color:#999;  
+}
+.btn1{
+  font-family: 'Montserrat', sans-serif;
+  display: inline-block;
+  padding: 12px 30px;
+  font-weight: 200;
+  color: #709fb0;
   border-color:#f4d160; 
   border-radius: 40px;
   text-decoration: none;
