@@ -74,6 +74,8 @@ setTimeout(() => {
 
 var admin = `contactsinamon@gmail.com`;
 var date = new Date();
+const str = email.toString();
+console.log(str);
 const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
     const transporter = nodemailer.createTransport({
         service: 'gmail',
