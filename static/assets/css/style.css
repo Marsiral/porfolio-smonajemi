@@ -29,10 +29,7 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
 }
-#chtext {
-  animation: change 1s step-end both;
-  animation: change1 1s step-end both;
-}
+
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -257,6 +254,18 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 1;
   }
 }
+
+/* --- CONTACT ICON */
+#chtext {
+  animation: flip 2s linear 2s infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes flip {
+  50% {
+    transform: rotateY(100deg);
+  }
+ }
 
 .resume-toggle i {
   color: #f4d160;
