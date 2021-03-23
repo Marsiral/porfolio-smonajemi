@@ -256,8 +256,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --- CONTACT ICON */
-#chtext {
+#chtext{
   animation: flip 2s linear 2s infinite;
+  transform-style: preserve-3d;
+}
+#footer {
+  animation: flip 3s;
   transform-style: preserve-3d;
 }
 
