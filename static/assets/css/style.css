@@ -811,7 +811,7 @@ section {
  .btn:hover, .btn:active, .btn:visited {
   background-color: unset !important;
   color: #709fb0;
-  border-color:#999;  
+  border-color:#f4d160;  
 }
 .btn{
   font-family: 'Montserrat', sans-serif;
