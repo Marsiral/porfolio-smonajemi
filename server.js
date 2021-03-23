@@ -86,7 +86,7 @@ const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
         }
 });    
     const emailAdmin = {
-        from: req.body.email,
+        from: email,
         to: admin,
         subject: `${fullname}`,
         html: `<div style="text-align: center;text-transform:uppercase"><h3>NEW MESSAGE FROM <a style="color:red;">${fullname}</a></h3></div> <br>
