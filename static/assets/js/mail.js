@@ -84,45 +84,45 @@ function validation() {
 //     return flag;
 //   }
 
-//   function emailvalidation()
-// {
+  function emailvalidation()
+{
 
-//     var input = document.form.email.value;
+    var input = document.form.email.value;
 
-//     var atsign = input.indexOf("@");
-//     var dotsign = input.lastIndexOf(".");
+    var atsign = input.indexOf("@");
+    var dotsign = input.lastIndexOf(".");
 
-//     while (input != null || input.length > 5)
-//     {
-//     if(atsign < 1 || dotsign < atsign + 2 || dotsign + 2 >= input.length)
-//     {
-//         alert("Email not valid");
-//         return false;
-//     }          
-//     else
-//     {
-//         return true;
-//     }  
-//     }        
+    while (input != null || input.length > 5)
+    {
+    if(atsign < 1 || dotsign < atsign + 2 || dotsign + 2 >= input.length)
+    {
+        alert("Email not valid");
+        return false;
+    }          
+    else
+    {
+        return true;
+    }  
+    }        
 
-// }
+}
 
-//   function isValid()
-//   {
-//       var flag = true;
+  function isValid()
+  {
+      var flag = true;
   
-//       flag &= validation(),myFunction();
+      flag &= validation(),myFunction();
   
-//       if (flag)
-//       {
-//           return true;
-//       }
-//       else
-//       {
-//           return false;
-//       }
+      if (flag)
+      {
+          return true;
+      }
+      else
+      {
+          return false;
+      }
   
-//   } 
+  } 
 
   $(document).ready(function() {
     if(validation() == true){
