@@ -96,7 +96,8 @@ function validation() {
     {
     if(atsign < 1 || dotsign < atsign + 2 || dotsign + 2 >= input.length)
     {
-        alert("Email not valid");
+        text = "Please Enter a Valid Email Address!";
+        error_message.innerHTML = text.toUpperCase();
         return false;
     }          
     else
