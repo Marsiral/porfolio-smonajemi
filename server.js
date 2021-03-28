@@ -72,18 +72,19 @@ app.post('/', (req, res) => {
   });  
 setTimeout(() => {
 
-    var admin = `infor@paint2go.ca`;
-    var date = new Date();
-    const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
-        const transporter = nodemailer.createTransport({
-            host: "mail.name.com",
-            port: 587,
-            secure: SSL, // true for 465, false for other ports
-            auth: {
-              user: process.env.SMTP_USER, // generated ethereal user
-              pass: process.env.SMTP_PASSWORD, // generated ethereal password
-            },
-    });   
+var admin = `contactsinamon@gmail.com`;
+var date = new Date();
+const fullname = (req.body.first_name + " " + req.body.last_name).toUpperCase();
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'contactsinamon@gmail.com',
+            pass: 'qrqiuzxtzkrllmeb'
+        },
+        tls:{
+            rejectUnauthorized: false
+        }
+});    
     const emailAdmin = {
         from: email,
         to: admin,
