@@ -111,7 +111,7 @@ function validation() {
   {
       var flag = true;
   
-      flag &= validation(),myFunction();
+      flag &= validation(),emailvalidation();
   
       if (flag)
       {
